@@ -1,0 +1,25 @@
+*{
+    font-family: 'Courier New', Courier, monospace;
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+   
+}
+
+.center{
+ height: 550px;
+ background-image: url(./assets/ImagemSalao.png);
+ background-repeat: no-repeat;
+ background-size: cover;
+ background-position: center;
+}
+
+.logo{
+height: 70px;
+width: 164px;
+float: left;
+margin: 10px;
+background:url("./assets/Lurdinha OG.png") center center/164px no-repeat;
+
+
+}
