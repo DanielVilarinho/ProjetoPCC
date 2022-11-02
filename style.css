@@ -1,5 +1,5 @@
 *{
-    font-family: 'Courier New', Courier, monospace;
+    font-family: 'Poppins', sans-serif;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -14,12 +14,54 @@
  background-position: center;
 }
 
-.logo{
+.sobrepor{
+    height: 120px;
+    width: 100%;
+    background: rgba(217, 217, 217, 0.37);
+}
+
+.LogoSalao{
+    float: left;
+    margin: 25px;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.menu{
+    text-align: right;
+    width: 75%;
+    padding:  46px 0;
+}
+
+.menu a{
+    color:  #F0EBE3;
+    text-decoration: none;
+    margin-right: 20px;
+    font-weight: 300;
+    font-size: 16px;
+    
+   
+   
+}
+
+.menu a:hover{
+    color: aquamarine;
+    font-size: 19px; /*aumenta o menu ao selecionar*/
+    
+}
+
+
+
+
+
+
+/*.logo{
 height: 70px;
 width: 164px;
 float: left;
 margin: 10px;
-background:url("./assets/Lurdinha OG.png") center center/164px no-repeat;
+background:url("./assets/Lurdinha OG.png") center center/164px no-repeat; Outra forma de configurar a logo*/
 
 
-}
+
+
