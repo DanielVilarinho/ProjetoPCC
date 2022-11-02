@@ -9,7 +9,7 @@
 
 .center{
  height: 550px;
- background-image: url(./assets/ImagemSalao.png);
+ background-image: url(./assets/backgroundatualizado.png);
  background-repeat: no-repeat;
  background-size: cover;
  background-position: center;
@@ -21,10 +21,10 @@
     background: rgba(217, 217, 217, 0.37);
 }
 
-.menu-mobile{
+/*.menu-mobile{
     display: none;
 }
-
+*/
 .LogoSalao{
     float: left;
     margin: 25px;
@@ -36,30 +36,71 @@
     text-align: right;
     width: 100%;
     padding:  46px 0;
+    display: flex;
+
 }
 
 .menu a{
-    color: black;
+    color: #F0EBE3;
     text-decoration: none;
     margin-right: 25px;
-    font-weight: 500;
-    font-size: 16px;
+    font-weight: 700;
+    font-size: 16px;        
 }
 
 .menu a:hover{
-    color: aquamarine;
-    font-size: 19px; /*aumenta o menu ao selecionar*/
+    color: pink;
+    font-size: 19px; /*aumenta o menu ao selecionar*/   
     
 }
 
 .menu .menuec{
-    padding: 0 59px;
+    padding: 0 46px;
+    color: white;
 }
 
 .menu{
     display: block;
 }
-.menu-mobile{
+
+
+@media (max-width: 600px) {
+    .menu a:hover{
+        color: pink;
+        font-size: 17px; /*aumenta o menu ao selecionar*/   
+        
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+/*.menu-mobile{
     font-size: 20px;
     padding:  46px;
     text-align: right;
@@ -69,14 +110,14 @@
     margin-left: 10px;
 }
 
-.navbar{
+/*.navbar{
     display: none;
     cursor: pointer;
     
     
 }
 
-.items-menu{
+/*.items-menu{
     position: absolute;
     justify-content: space-between  ;
     flex-direction: column ;
@@ -88,7 +129,7 @@
     
 
 
-.items-menu a{
+/*.items-menu a{
     text-decoration: none;
     color: black;
 }
@@ -101,18 +142,12 @@
     display: none;
 }
 
-.items-menu.show{
+/*.items-menu.show{
     display: flex;
-    ;
-    }
-@media (max-width: 830px) {
-    .navbar {
-        display: block;
-        
-        }  
+    }*/
 
-    }
-    .menu-mobile{
+
+   /* .menu-mobile{
         display: block;
-        position: absolute;
-    }
+        position: absolute;*/
+    
