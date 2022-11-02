@@ -63,22 +63,56 @@
     font-size: 20px;
     padding:  46px;
     text-align: right;
-    display: block; 
-    
-    
+    display: none;    
+    text-decoration: none;
+    align-items: center;
+    margin-left: 10px;
 }
 
 .navbar{
+    display: none;
     cursor: pointer;
+    
+    
 }
 
-/*.logo{
-height: 70px;
-width: 164px;
-float: left;
-margin: 10px;
-background:url("./assets/Lurdinha OG.png") center center/164px no-repeat; Outra forma de configurar a logo*/
+.items-menu{
+    position: absolute;
+    justify-content: space-between  ;
+    flex-direction: column ;
+    align-items: center;
+    width: 50%;
+    text-align: center;
+    display: none;}
+    /*background-color: rgba(217, 217, 217, 0.37);*/
+    
 
 
+.items-menu a{
+    text-decoration: none;
+    color: black;
+}
 
+.items-menu a:hover{
+    color: aquamarine;
+    font-size: 22px; }
 
+.items-menu.hidde{
+    display: none;
+}
+
+.items-menu.show{
+    display: flex;
+    ;
+    }
+@media (max-width: 830px) {
+    .navbar {
+        display: block;
+        
+        }  
+
+    }
+    .menu-mobile{
+        display: block;
+        position: absolute;
+    }
