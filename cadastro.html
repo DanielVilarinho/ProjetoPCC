@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tela de Cadastro</title>
+    <link rel="stylesheet" href="login.css">
+    <link rel="icon" type="image/x-icon" href="./assets/Lurdinha-OG.ico">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+<body>
+    <div class="tela-cadastro">
+        <div class="card">
+            <img src="/assets/Lurdinha OG.png" alt="logo-card" id="logcard">
+            <h1>Cadastrar</h1>
+
+            <div id="msgsucesso"></div>
+            <div id="msgerro"></div>
+
+            <div class="label-float">
+                <input type='text' id='nome' name="" required >
+                <label id="labelnome" for="nome">Nome</label>
+
+
+            <div class="label-float">
+                <input type='text' id='email' placeholder="" required >
+                <label id="labelemail" for="email">Email</label>
+            </div>
+
+            <div class="label-float">
+                <input type='tel' id='telefone' required placeholder="">
+                <label id="labeltelefone" for="telefone">Telefone</label>
+            </div>
+
+            <div class="label-float">
+                <input type='password' id='senha' name="" required >
+                <label id="labelsenha" for="senha">Senha</label>
+                <i id="visusenha" class="fa fa-eye" aria-hidden="true"></i>
+            </div>
+
+            <div class="label-float">
+                <input type='password' id='confirmarsenha' name="" required >
+                <label id="labelconfirmarsenha" for="confirmarsenha">Confirmar Senha</label>
+                <i id="visuconfirmar" class="fa fa-eye" aria-hidden="true"></i>
+            </div>
+
+            <div class="centralizar">
+                <button onclick='cadastrar()'>Cadastrar</button>
+            </div>
+
+            <div class="centralizar">
+                <hr>    
+            </div>
+            <p>Já possui uma conta?
+                <a href="login.html"> Entrar</a>
+            </p>
+        </div>
+    </div>
+    <script src="./script.js"> </script>
+</body>
+</html>
