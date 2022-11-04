@@ -3,10 +3,13 @@
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    
    
 }
 
-
+.body{
+  background: #e7e7e7;
+}
 .center{
  height: 550px;
  background-image: url(./assets/backgroundatualizado.png);
@@ -70,78 +73,44 @@
         font-size: 17px; /*aumenta o menu ao selecionar*/   
         
     }
+  }
+.topo{
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  margin-top: 10%;
+  
+  
+
+}
+.topo-text a{
+  color: black;
+  font-weight: 600;
+  display: flex;
+  margin-bottom: 10%;
+  padding: 0 18%;
+  font-size: 22px;
+
+  
+}
+.topo-image img{
+  max-width: 350px;
+  max-height: 390px;
+  display: flex;
 }
 
-#btn-mobile {
-    display: none;
-  }
-  
-  @media (max-width: 600px) {
-    #menu {
-      display: block;
-      position: absolute;
-      width: 100%;
-      top: 70px;
-      right: 0px;
-      background: #e7e7e7;
-      transition: 0.6s;
-      z-index: 1000;
-      height: 0px;
-      visibility: hidden;
-      overflow-y: hidden;
-    }
-    #nav.active #menu {
-      height: calc(100vh - 70px);
-      visibility: visible;
-      overflow-y: auto;
-    }
-    #menu a {
-      padding: 1rem 0;
-      margin: 0 1rem;
-      border-bottom: 2px solid rgba(0, 0, 0, 0.05);
-    }
-    #btn-mobile {
-      display: flex;
-      padding: 0.5rem 1rem;
-      font-size: 1rem;
-      border: none;
-      background: none;
-      cursor: pointer;
-      gap: 0.5rem;
-    }
-    #hamburger {
-      border-top: 2px solid;
-      width: 20px;
-    }
-    #hamburger::after,
-    #hamburger::before {
-      content: '';
-      display: block;
-      width: 20px;
-      height: 2px;
-      background: currentColor;
-      margin-top: 5px;
-      transition: 0.3s;
-      position: relative;
-    }
-    #nav.active #hamburger {
-      border-top-color: transparent;
-    }
-    #nav.active #hamburger::before {
-      transform: rotate(135deg);
-    }
-    #nav.active #hamburger::after {
-      transform: rotate(-135deg);
-      top: -7px;
-    }
-  }
+.topo-btn{
+  padding: 15px 60px;
+  background: #F875AA ;
+  color: white;
+  border-radius: 8px;
+  font-weight: 600;
+  transition: all 0.5s;
+  text-decoration: none;
 
-
-
-
-
-
-
+}
 
 
 
