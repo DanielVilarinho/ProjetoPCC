@@ -14,7 +14,11 @@ body{
     display: flex;
     justify-content: center;
     width: 100%;
+<<<<<<< HEAD
     margin-top: 100px;
+=======
+    margin-top: 50px;
+>>>>>>> b1e09e50426b9fc424a7d6a480e7b50716625eb6
 
 }
 
@@ -23,15 +27,26 @@ body{
     padding: 80px;
     border-radius: 6%;
     box-shadow: 3px 3px 1px 0px #00000070;
+<<<<<<< HEAD
+=======
+    height: 80%;
+>>>>>>> b1e09e50426b9fc424a7d6a480e7b50716625eb6
 
 }
 
 .tela-cadastro .card{
     background-color: #ffffff;
+<<<<<<< HEAD
     padding: 80px;
     border-radius: 6%;
     box-shadow: 3px 3px 1px 0px #00000070;
     width: 36   0px;
+=======
+    padding: 90px;
+    border-radius: 6%;
+    box-shadow: 3px 3px 1px 0px #00000070;
+
+>>>>>>> b1e09e50426b9fc424a7d6a480e7b50716625eb6
 
 }
 
@@ -61,7 +76,11 @@ h1{
     position: relative;
     max-width: 180px;
     display: flex;  
+<<<<<<< HEAD
     margin-top: -60px;
+=======
+    margin-top: -70px;
+>>>>>>> b1e09e50426b9fc424a7d6a480e7b50716625eb6
     padding: 0 80px;
 }
 
@@ -76,6 +95,10 @@ h1{
     border-bottom: 2px solid blue;
 }
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> b1e09e50426b9fc424a7d6a480e7b50716625eb6
 .label-float label{
     color: black;
     pointer-events: none;
@@ -92,7 +115,11 @@ h1{
     margin-top: 0;
     color:blue ;
 }
+<<<<<<< HEAD
 
+=======
+    
+>>>>>>> b1e09e50426b9fc424a7d6a480e7b50716625eb6
 
 button{
     background-color: #F875AA;
@@ -146,4 +173,27 @@ a:hover{
     cursor: pointer;
 
 }   
+<<<<<<< HEAD
     
+=======
+    
+
+#msgerro{
+    text-align: center;
+    color: rgba(255, 0, 0, 0.781);
+    background-color: #f88583;
+    font-weight: bold;
+    padding: 12px;
+    border-radius: 5px;
+    display: none;
+}
+
+#msgsucesso{
+    text-align: center;
+    color: green;
+    background-color: greenyellow;
+    padding: 12px;
+    border-radius: 5px;
+    display: none;
+}
+>>>>>>> b1e09e50426b9fc424a7d6a480e7b50716625eb6
