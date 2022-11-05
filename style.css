@@ -1,184 +1,123 @@
 *{
     font-family: 'Poppins', sans-serif;
     margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-    
-   
-}
+    padding: 0;          
+    }
 
-.body{
-  background: #e7e7e7;
-}
-.center{
- height: 550px;
- background-image: url(./assets/backgroundatualizado.png);
- background-repeat: no-repeat;
- background-size: cover;
- background-position: center;
-}
-
-.sobrepor{
-    height: 120px;
-    width: 100%;
-    background: rgba(217, 217, 217, 0.37);
-}
-
-/*.menu-mobile{
-    display: none;
-}
-*/
-.LogoSalao{
-    float: left;
-    margin: 25px;
-    background-position: center;
-    background-repeat: no-repeat;
-}
-
-.menu{
-    text-align: right;
-    width: 100%;
-    padding:  46px 0;
-    display: flex;
-
-}
-
-.menu a{
-    color: #F0EBE3;
+a {
+    color: White;
     text-decoration: none;
-    margin-right: 25px;
-    font-weight: 700;
-    font-size: 16px;        
-}
+    font-size: 16px;  
+    transition: 0.3s;
+    font-weight: 600;
+    }
 
-.menu a:hover{
+a:hover{
     color: pink;
-    font-size: 19px; /*aumenta o menu ao selecionar*/   
-    
-}
-
-.menu .menuec{
-    padding: 0 46px;
-    color: white;
-}
-
-.menu{
-    display: block;
-}
-
-
-@media (max-width: 600px) {
-    .menu a:hover{
-        color: pink;
-        font-size: 17px; /*aumenta o menu ao selecionar*/   
+    font-size: 18px; /*aumenta o menu ao selecionar*/   
         
     }
-  }
-.topo{
-  width: 100%;
-  height: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: space-around;
-  margin-top: 10%;
-  
-  
-
-}
-.topo-text a{
-  color: black;
-  font-weight: 600;
-  display: flex;
-  margin-bottom: 10%;
-  padding: 0 18%;
-  font-size: 22px;
-
-  
-}
-.topo-image img{
-  max-width: 350px;
-  max-height: 390px;
-  display: flex;
-}
-
-.topo-btn{
-  padding: 15px 60px;
-  background: #F875AA ;
-  color: white;
-  border-radius: 8px;
-  font-weight: 600;
-  transition: all 0.5s;
-  text-decoration: none;
+.logo{
+    height: 70px;
+    width: 164px;
+    padding: 2%;
 
 }
 
-
-.body{
-    background-color: #F875AA;
+nav{
+    display:flex;
+    justify-content: space-between;
+    align-items: top;
+    background-image: url(./assets/backgroundatualizado.png);
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
 }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-/*.menu-mobile{
-    font-size: 20px;
-    padding:  46px;
-    text-align: right;
-    display: none;    
-    text-decoration: none;
-    align-items: center;
-    margin-left: 10px;
+main{
+    background: #e7e7e7; 
 }
 
-/*.navbar{
-    display: none;
-    cursor: pointer;
-    
-    
-}
-
-/*.items-menu{
-    position: absolute;
-    justify-content: space-between  ;
-    flex-direction: column ;
-    align-items: center;
-    width: 50%;
-    text-align: center;
-    display: none;}
-    /*background-color: rgba(217, 217, 217, 0.37);*/
-    
-
-
-/*.items-menu a{
-    text-decoration: none;
-    color: black;
-}
-
-.items-menu a:hover{
-    color: aquamarine;
-    font-size: 22px; }
-
-.items-menu.hidde{
-    display: none;
-}
-
-/*.items-menu.show{
+.navlist{
+    list-style: none;
     display: flex;
-    }*/
+    padding: 2%;
+}
+
+.navlist li{
+    letter-spacing: 3px;
+    margin-left: 25px; 
+}
+
+.navbar{
+    cursor: pointer;
+    display: none;
+}   
+.navbar div{
+    width: 36px;
+    height: 5px;
+    background:pink;
+    margin: 4px;
+    transition: 0.5s;
+}
+
+@media (max-width: 999px) {
+    body {
+      overflow-x: hidden;
+    }
+    .navlist {
+      position: absolute;
+      top: 20vh;
+      width: 100vw;
+      height: 80vh;
+      background: #e7e7e7;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-around;
+      transform: translateX(100%);
+      transition: transform 0.3s ease-in;
+    }
+    .navlist li {
+      margin-left: 0;
+      opacity: 1;
+      align-items: center;
+    }
+    .navlist a{
+        color: blueviolet;
+    }
+    .navbar {
+      display: block;
+      margin: 40px;
+    }
+  }
+  
+  .navlist.active {
+    transform: translateX(0);
+  }
+  
+  @keyframes navLinkFade {
+    from {
+      opacity: 0;
+      transform: translateX(50px);
+    }
+    to {
+      opacity: 1;
+      transform: translateX(0);
+    }
+  }
+
+  .navbar.active .line1 {
+    transform: rotate(-45deg) translate(-6px, 8px);
+  }
+  
+  .navbar.active .line2 {
+    opacity: 0;
+  }
+  
+  .navbar.active .line3 {
+    transform: rotate(45deg) translate(-5px, -7px);
+  }
 
 
-   /* .menu-mobile{
-        display: block;
-        position: absolute;*/
 

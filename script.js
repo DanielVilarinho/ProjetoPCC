@@ -31,7 +31,7 @@ let labelemail = document.querySelector('#labelemail')
 let validaremail = false
 
 let telefone = document.querySelector('#telefone')
-let labeltelefone = document.querySelector('#telefone')
+let labeltelefone = document.querySelector('#labeltelefone')
 let validartelefone = false
 
 let senha = document.querySelector('#senha')
@@ -72,13 +72,27 @@ email.addEventListener('keyup', () => {
   }
 })
 
+/*function validtele(telefone){
+  let telexp = /\s+@\S+\.\S+/
+  return telexp.test(telefone);}*/
+
 telefone.addEventListener('keyup', () => {
-  if(nome.value.length <= 0){
+  if(telefone.value.length <=10 ){
+    labeltelefone.innerHTML = 'Telefone *Informe um telefone válido'
+    labeltelefone.setAttribute('style', 'color: red')
+    telefone.setAttribute('style', 'border-color: red')
     validartelefone = false
   } else {
+    labeltelefone.innerHTML = 'Telefone'
+    labeltelefone.setAttribute('style', 'color: green')
+    telefone.setAttribute('style', 'border-color: green')
     validartelefone = true
   }
 })
+
+
+
+
 
 senha.addEventListener('keyup', () => {
   if(senha.value.length <= 7){
@@ -125,4 +139,52 @@ function cadastrar(){
 }
 
 
+/*menu mobile8*/
 
+class MobileNavbar {
+  constructor(mobileMenu, navList, navLinks ) {
+      this.mobileMenu = document.querySelector(mobileMenu);
+      this.navList = document.querySelector(navList);
+      this.navLinks = document.querySelectorAll(navLinks)
+      this.activeClass = "active";
+
+      this.handleClick = this.handleClick.bind(this);
+  }
+
+  animateLinks() {
+    this.navLinks.forEach((link, index) => {
+      link.style.animation
+        ? (link.style.animation = "")
+        : (link.style.animation = `navLinkFade 0.5s ease forwards ${
+            index / 8 + 0.3
+          }s`);
+    });
+  }
+
+  handleClick() {
+    this.navList.classList.toggle(this.activeClass);
+    this.mobileMenu.classList.toggle(this.activeClass);
+    this.animateLinks();
+  }
+
+  addClickEvent() {
+    this.mobileMenu.addEventListener("click", this.handleClick);
+  }
+
+  init() {
+      if(this.mobileMenu) {
+          this.addClickEvent();   
+      }
+      return this;
+  }
+}
+
+const mobileNavbar = new MobileNavbar (
+  ".navbar",
+  ".navlist",
+  ".navlist li",
+);
+
+mobileNavbar.init();
+
+/*menu mobile8*/

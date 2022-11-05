@@ -14,103 +14,29 @@
     </head> 
 <body>
 
-    <header>
-        <div class="center">
-            <div class="sobrepor">
-                <div style='position:relative'>
-            </div>
-            <div class="logo">
-                <a href="index.html"><!--colocoar o link correto-->
-                    <img src= "./assets/Lurdinha OG.png" alt="logo do salão" class="LogoSalao"  height="70" width="164" hspace="10" </img> </a>
-            </div><!--logo-->
-            <div class="menu">
-                <a href="index.html"><!--onde tiver # colocar os link para cada janela-->
-                    Produtos
-                </a>
-                <a href="index.html">
-                    Serviços
-                </a>
-                <a href="index.html">
-                    Contato
-                </a>
-                <a class="menuec" href="cadastro.html">
-                    Entrar/Cadastrar
-                </a>
-
-            </div><!--menu-->
-            <!--<div class="menu-mobile"> 
-                <img class="navbar" src="./assets/bars-solid.svg" style="height: 35px">
-                <div class="items-menu"> 
-                    <a href="">Produtos</a>
-                    <a href="">Serviços</a>
-                    <a href="">Contato</a>
-                    <a href="">Entrar/Cadastrar</a>
-
-
+        <header>
+            <nav>
+                <img class="logo" src="./assets/Lurdinha OG.png" alt="Logo Salão">
+                <div class="navbar">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
                 </div>
+                <ul class="navlist">
+                    <li><a href="">Produtos</a></li>
+                    <li><a href="">Serviços</a></li>
+                    <li><a href="">Contato</a></li>
+                    <li><a href="./cadastro.html">Entrar/Cadastrar</a></li>
 
-            </div><!--menu-mobile-->
-    
-            
-        </div><!--center-->
-    </header>
-    
-    <main>
-        <section class="topo">
-            <div class="topo-text">
-                <a>
-                    Designer de Sobrancelha
-                </a>
-                <a>
-                    Maquiagem
-                </a>
-                <a>
-                    Manicure
-                </a>
-                <a>
-                    Cabelo
-                </a>
-
-            </div>
-            <div class="topo-image">
-                <img src="./assets/imagem1.jpg" alt="Imagem 1">
-            </div>
-            <a href="#" class="topo-btn" >Ver Mais</a>
+                </ul>
+            </nav>
+        </header>
+        <main>
 
 
-
-        </section>
-
-
-
-
-
-    </main>
-
-
-
-
-
-    </section>
- 
-
-    <script>
-
-        var el = document.querySelector('.navbar');
-        el.addEventListener('click',()=>{
-            var itemsmenu = document.querySelector('.items-menu');
-            if(itemsmenu.classList.contains('show')){
-                itemsmenu.classList.add('hide');
-                itemsmenu.classList.remove('show');
-            } else {
-                itemsmenu.classList.add('show');
-                itemsmenu.classList.remove('hide');
-            }
-        });
-    </script>
-
-
+        </main>
+        <script src="./mobile.js"> </script>
 </body>
 
 </html>
-arruma
+        
