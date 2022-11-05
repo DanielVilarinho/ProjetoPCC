@@ -10,8 +10,9 @@
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
 </head>
 <body>
-    <div class="tela-cadastro">
-        <div class="card">
+   <form action="cadastro.php" method="POST">
+        <div class="tela-cadastro">
+         <div class="card">
             <img src="https://logospng.org/wp-content/uploads/chanel.png" alt="logo-card" id="logcard">
             <h1>Cadastrar</h1>
 
@@ -19,22 +20,22 @@
             <div id="msgerro"></div>
 
             <div class="label-float">
-                <input type='text' id='nome' name="" required >
+                <input type='text' id='nome' name="nome" required >
                 <label id="labelnome" for="nome">Nome</label>
 
 
             <div class="label-float">
-                <input type='text' id='email' placeholder="" required >
+                <input type='text' id='email' name="email" required >
                 <label id="labelemail" for="email">Email</label>
             </div>
 
             <div class="label-float">
-                <input type='tel' id='telefone' required placeholder="">
+                <input type='tel' id='telefone' name="telefone" required >
                 <label id="labeltelefone" for="telefone">Telefone</label>
             </div>
 
             <div class="label-float">
-                <input type='password' id='senha' name="" required >
+                <input type='password' id='senha' name="senha" required >
                 <label id="labelsenha" for="senha">Senha</label>
                 <i id="visusenha" class="fa fa-eye" aria-hidden="true"></i>
             </div>
@@ -58,5 +59,6 @@
         </div>
     </div>
     <script src="./script.js"> </script>
+</form> 
 </body>
 </html>
