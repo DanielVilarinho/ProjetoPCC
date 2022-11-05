@@ -1,5 +1,16 @@
 let btn = document.querySelector('#visusenha')
 let btnconfirmar = document.querySelector('#visuconfirmar')
+let btnlog = document.querySelector('.fa-eye')
+
+btnlog.addEventListener('click', ()=>{
+  let inputsenhalog = document.querySelector('#senha')
+  if(inputsenhalog.getAttribute('type') == 'password'){
+    inputsenhalog.setAttribute('type', 'text')
+  } else {
+    inputsenhalog .setAttribute('type', 'password')
+  }
+})
+
 
 let nome = document.querySelector('#nome')
 let labelnome = document.querySelector('#labelnome')
@@ -122,6 +133,4 @@ btnconfirmar.addEventListener('click', ()=>{
     inputconfirmarsenha.setAttribute('type', 'password')
   }
 })
-
-
 
