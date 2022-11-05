@@ -1,0 +1,94 @@
+*{
+    font-family: 'Poppins', sans-serif;
+    margin: 0;
+    padding: 0;          
+    }
+
+a {
+    color: White;
+    text-decoration: none;
+    font-size: 16px;  
+    transition: 0.3s;
+    font-weight: 600;
+    }
+
+a:hover{
+    color: pink;
+    font-size: 18px; /*aumenta o menu ao selecionar*/   
+        
+    }
+.logo{
+    height: 70px;
+    width: 164px;
+    padding: 2%;
+
+}
+
+nav{
+    display:flex;
+    justify-content: space-between;
+    align-items: top;
+    background-image: url(./assets/backgroundatualizado.png);
+    height: 50vh;
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+}
+
+main{
+    background: #e7e7e7; 
+}
+
+.navlist{
+    list-style: none;
+    display: flex;
+    padding: 2%;
+}
+
+.navlist li{
+    letter-spacing: 3px;
+    margin-left: 25px; 
+}
+
+.navbar{
+    cursor: pointer;
+    display: none;
+}   
+.navbar div{
+    width: 28px;
+    height: 2px;
+    background: black;
+    margin: 4px;
+}
+
+@media (max-width:999px){
+
+    .body{
+        overflow-x: hidden;
+    }
+    .navlist{
+        position: absolute;
+        top: 18vh;
+        right: 0;
+        width: 100vw;
+        height: 82vh;
+        background-color: #e7e7e7;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+        transform: translateX(100%);
+    }
+    .navlist li{
+        opacity: 0;
+    }
+
+    .navbar{
+        display: block;
+        margin: 30px;
+    }
+
+    .navlist.active{
+        transform: translateX(0);
+    }
+
+}

@@ -1,6 +1,6 @@
-let btn = document.querySelector('#visusenha')
 let btnconfirmar = document.querySelector('#visuconfirmar')
 let btnlog = document.querySelector('.fa-eye')
+
 
 btnlog.addEventListener('click', ()=>{
   let inputsenhalog = document.querySelector('#senha')
@@ -11,6 +11,16 @@ btnlog.addEventListener('click', ()=>{
   }
 })
 
+
+btnconfirmar.addEventListener('click', ()=>{
+  let inputconfirmarsenha = document.querySelector('#confirmarsenha')
+
+  if(inputconfirmarsenha.getAttribute('type') == 'password'){
+    inputconfirmarsenha.setAttribute('type', 'text')
+  } else {
+    inputconfirmarsenha.setAttribute('type', 'password')
+  }
+})
 
 let nome = document.querySelector('#nome')
 let labelnome = document.querySelector('#labelnome')
@@ -41,7 +51,7 @@ function validEmail(email){
 }
 
 nome.addEventListener('keyup', () => {
-  if(nome.value.length <= 0){
+  if(nome.value.length <= 1){
     validarnome = false
   } else {
     validarnome = true
@@ -114,23 +124,5 @@ function cadastrar(){
 
 }
 
-btn.addEventListener('click', ()=>{
-  let inputsenha = document.querySelector('#senha')
 
-  if(inputsenha.getAttribute('type') == 'password'){
-    inputsenha.setAttribute('type', 'text')
-  } else {
-    inputsenha.setAttribute('type', 'password')
-  }
-})
-
-btnconfirmar.addEventListener('click', ()=>{
-  let inputconfirmarsenha = document.querySelector('#confirmarsenha')
-
-  if(inputconfirmarsenha.getAttribute('type') == 'password'){
-    inputconfirmarsenha.setAttribute('type', 'text')
-  } else {
-    inputconfirmarsenha.setAttribute('type', 'password')
-  }
-})
 
