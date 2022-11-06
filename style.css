@@ -215,6 +215,48 @@ footer{
   height: 214px;
   left: 127px;
   top: 690px;
+}
 
+.img1{
+  position: absolute;
+  width: 312px;
+  height: 390px;
+  left: 532px;
+  top: 602px;
+  
+  background: url(/assets/imagem1.jpg);
+}
 
+.botao1{
+  position: absolute;
+  width: 232px;
+  height: 44px;
+  left: 1041px;
+  top: 724px;
+}
+
+.topico2{
+  position: absolute;
+  left: -34.87%;
+  right: 79.38%;
+  top: 54.79%;
+  bottom: -28.08%;
+}
+
+.img2{
+  position: absolute;
+  left: 38.87%;
+  right: 16.32%;
+  top: 30.82%;
+  bottom: -85.27%;
+
+  background: url(/assets/ImagemSalao.png);
+
+.botao2{
+  position: absolute;
+  width: 232px;
+  height: 44px;
+  left: 1041px;
+  top: 724px;
+}
 }
