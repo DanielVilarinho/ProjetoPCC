@@ -138,6 +138,11 @@ main{
     transform: rotate(45deg) translate(-5px, -7px);
   }
 
+  #mapa{
+    display: flex;
+    justify-content: center;
+  }
+
 footer{
   background-color: #383E56;
   padding: 80px 0;
@@ -207,4 +212,3 @@ footer{
   text-align: center;
   margin-bottom: -50px;
 }
-
