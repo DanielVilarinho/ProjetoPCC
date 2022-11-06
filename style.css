@@ -4,7 +4,7 @@
     padding: 0;          
     }
 
-a {
+.navlist a {
     color: White;
     text-decoration: none;
     font-size: 16px;  
@@ -12,29 +12,40 @@ a {
     font-weight: 600;
     }
 
-a:hover{
+.navlist a:hover{
     color: pink;
     font-size: 18px; /*aumenta o menu ao selecionar*/   
         
     }
-.logo{
+
+#linklogo{
+  height: 70px;
+  width: 164px;
+}
+#logo{
     height: 70px;
     width: 164px;
-    padding: 2%;
+    margin: 25px;
 
+}
+ header{
+  background-image: url(./assets/backgroundatualizado.png);
+  height: 50vh;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
 }
 
 nav{
     display:flex;
     justify-content: space-between;
     align-items: top;
-    background-image: url(./assets/backgroundatualizado.png);
-    height: 50vh;
-    background-repeat: no-repeat;
-    background-size: cover;
-    background-position: center;
-}
+    background-color: rgba(217, 217, 217, 0.37);
+} 
 
+#ec{
+  margin-left: 50px;
+}
 main{
     background: #e7e7e7; 
 }
@@ -42,7 +53,7 @@ main{
 .navlist{
     list-style: none;
     display: flex;
-    padding: 2%;
+    padding: 3%;
 }
 
 .navlist li{
@@ -66,11 +77,14 @@ main{
     body {
       overflow-x: hidden;
     }
+    #ec{
+      margin-left: 0;
+    }
     .navlist {
       position: absolute;
-      top: 20vh;
+      top: 12vh;
       width: 100vw;
-      height: 80vh;
+      height: 88vh;
       background: #e7e7e7;
       flex-direction: column;
       align-items: center;
