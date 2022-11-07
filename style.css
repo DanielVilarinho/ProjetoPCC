@@ -266,8 +266,12 @@ footer{
   margin-top: 50%;
   margin-right: 29px;
   align-items: right;
+  transition: 0.3s;
 }
 
+.btnbox:hover{
+    background-color: #f09abc;
+}
 @media(max-width:850px) {
   .rodcoluna{
     width: 100%;
@@ -318,15 +322,16 @@ footer{
 
 
 .cards-prod{
-
   display: flex;
   justify-content: space-around;
+  margin-top: 80px;
   margin-top: 40px;
+
 }
 
 .prodbox{
   width: 260px;
-  height: 370px;
+  height: 390px;
   background-color: rgb(204, 196, 196);
   margin-bottom: 50px;
   align-items: center;
@@ -345,7 +350,7 @@ footer{
 }
 
 .descprod{
-  padding: 30px 35px;
+  padding: 30px 25px;
   color: #383E56;
   font-weight: 600;
   font-size: 16px;
@@ -389,6 +394,25 @@ footer{
   margin: 10vw 7vw 10vw 7vw;
 }
 
+.prodbtn{
+  cursor: pointer;
+  width: 155px;
+  height: 49px;
+  background-color: #F875AA;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  margin-top: 19px;
+  margin-left: 50px;
+  transition: 0.3s;
+
+
+}
+.prodbtn:hover{
+  background-color: #f09abc;
+
+}
+
 @media screen and (max-width: 999px) {
   .sobre {
     width: 100%;
@@ -427,6 +451,7 @@ footer{
     position: absolute;
   }
 }
+
 
 .prodbtn{
   cursor: pointer;
