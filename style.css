@@ -315,7 +315,53 @@ footer{
   }
 }
 
+.cards-prod{
+
+  display: flex;
+  justify-content: space-around;
+  margin-top: 40px;
+  
+}
+
+.prodbox{
+  width: 260px;
+  height: 370px;
+  background-color: rgb(204, 196, 196);
+  margin-bottom: 50px;
+  align-items: center;
+}
 .iconinsta{
   margin-left: 5px;
   margin-bottom: -6px;
+}
+
+#imgprod{
+  width: 180px;
+  height: 120px;
+  display: flex;
+  margin-top: 10px;
+  margin-left: 40px;
+}
+
+.descprod{
+  padding: 30px 35px;
+  color: #383E56;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 23px;
+  text-align: center;
+  margin-top: 14px;
+}
+
+.valorprod{
+  color: blue;
+  font-weight: 800;
+  text-align: left;
+  font-size: 15px;
+  margin-left: 16px;
+}
+
+.valorprod span{
+  font-size: 23px;
+  font-weight: 800;
 }
