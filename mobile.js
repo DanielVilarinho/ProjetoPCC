@@ -1,3 +1,11 @@
+let cont = document.querySelector('.contscroll');
+let fimpag = document.querySelector('.rodcoluna');
+
+cont.addEventListener('click', ()=>{
+    fimpag.scrollIntoView({behavior: "smooth"});
+});
+
+
 class MobileNavbar {
     constructor(mobileMenu, navList, navLinks ) {
         this.mobileMenu = document.querySelector(mobileMenu);
@@ -43,3 +51,5 @@ const mobileNavbar = new MobileNavbar (
 );
 
 mobileNavbar.init();
+
+

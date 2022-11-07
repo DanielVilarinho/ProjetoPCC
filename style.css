@@ -66,6 +66,18 @@ servicos.html main{
     display: flex;
     padding: 3%;
 }
+.navlist .contscroll{
+  cursor: pointer;
+  color: White;
+  text-decoration: none;
+  font-size: 16px;  
+  transition: 0.3s;
+  font-weight: 600;
+  }
+.contscroll:hover{
+  color: pink;
+  font-size: 18px;
+}
 
 .navlist li{
     letter-spacing: 3px;
@@ -109,7 +121,18 @@ servicos.html main{
       align-items: center;
     }
     .navlist a{
-        color: blueviolet;
+        color: blueviolet ;
+        font-size: 18px;
+    }
+    .navlist .contscroll{
+      color: blueviolet;
+      font-size: 18px;
+    }
+
+    .navlist .contscroll:hover, .navlist a:hover{
+      color: rgb(192, 148, 236);
+      font-size: 20px;
+
     }
     .navbar {
       display: block;
@@ -208,6 +231,7 @@ footer{
   margin-bottom: 65px;
   display: flex;
   justify-content: space-between;
+  box-shadow: 3px 6px 9px 3px #00000070;
 
 }
 
@@ -237,6 +261,7 @@ footer{
 .cards{
   padding-left: 5%;
   height: 100%;
+  
 }
 
 .cards h1{
@@ -326,6 +351,7 @@ footer{
   justify-content: space-around;
   margin-top: 80px;
   margin-top: 40px;
+  flex-wrap: wrap;
 
 }
 
@@ -413,7 +439,11 @@ footer{
   background-color: #f09abc;
 
 }
-
+@media (max-width:680px){
+  .textbox{
+    display: none;
+  }
+}
 @media screen and (max-width: 999px) {
   .sobre {
     width: 100%;
@@ -465,3 +495,4 @@ footer{
   align-items: center;
   text-align: center;
 }
+
