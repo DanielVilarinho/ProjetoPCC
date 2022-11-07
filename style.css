@@ -322,7 +322,6 @@ footer{
   display: flex;
   justify-content: space-around;
   margin-top: 40px;
-  
 }
 
 .prodbox{
@@ -369,12 +368,11 @@ footer{
 }
 
 .topico{
-  margin: 5vw;
+  margin: 8vw;
   text-align: left;
   justify-content: center;
   font-size: 24px;
 }
-
 
 .botao{
   display: inline-block;
@@ -386,9 +384,7 @@ footer{
   color: #FFFFFF;
   border: none;
   border-radius: 8px;
-  margin-top: 50%;
-  margin-right: 29px;
-  align-items: center;
+  margin: 10vw;
 }
 
 @media screen and (max-width: 999px) {
@@ -428,4 +424,16 @@ footer{
     width: 100%;
     position: absolute;
   }
+}
+
+.prodbtn{
+  cursor: pointer;
+  width: 155px;
+  height: 49px;
+  background-color: #F875AA;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  align-items: center;
+  text-align: center;
 }
