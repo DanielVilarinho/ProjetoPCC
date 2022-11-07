@@ -244,6 +244,7 @@ footer{
   font-family: 'Roboto';
   font-weight: 400;
   font-size: 36px;
+  color: #383E56;
 
 }
 
@@ -251,6 +252,7 @@ footer{
   display: inline-block;
   font-size: 19px;
   padding: 38px 40px;
+  color: #383E56;;
 }
 
 .btnbox{
