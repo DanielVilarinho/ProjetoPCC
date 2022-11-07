@@ -6,6 +6,7 @@
     }
 body{
   min-height: 100%;
+  background: #e7e7e7; 
 }
 .navlist a {
     color: White;
@@ -51,10 +52,15 @@ nav{
 #ec{
   margin-left: 50px;
 }
+
+
 main{
     background: #e7e7e7; 
 }
 
+servicos.html main{
+  background: #383E56;
+}
 .navlist{
     list-style: none;
     display: flex;
@@ -148,13 +154,13 @@ footer{
   max-width: 100%;
 }
 
-#numtele{
+#contlink{
   text-decoration: none;
   color: #FFFFFF;
   transform: 0.3s ;
 }
 
-#numtele:hover{
+#contlink:hover{
   color: pink;
 }
 
@@ -168,7 +174,7 @@ footer{
 .rodcoluna ul li{
   color: #FFFFFF;
   list-style: none;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
 .rodape{
@@ -185,6 +191,83 @@ footer{
 
 }
  
+
+.rodtext{
+  color: #FFFFFF;
+  margin-top: 7%;
+  margin-bottom: 2px;
+  padding: 0;
+  text-align: center;
+  margin-bottom: -50px;
+}
+
+.cards .servbox{
+  width: 95%;
+  max-height: 218px;
+  background-color: rgb(204, 196, 196);
+  margin-bottom: 65px;
+  display: flex;
+  justify-content: space-between;
+
+}
+
+#img1{
+  width: 220px;
+  height: 216px;
+  display: inline-block;
+}
+
+#img2{
+  width: 240.65px;
+  height: 216px;
+  display: inline-block;
+}
+
+#img3{
+  width:250.65px;
+  height: 216px;
+  display: inline-block;
+}
+
+#img4{
+  width: 239.99px;
+  height: 216px;
+  display: inline-block;
+}
+.cards{
+  padding-left: 5%;
+  height: 100%;
+}
+
+.cards h1{
+  padding: 25px 0px;
+  font-family: 'Roboto';
+  font-weight: 400;
+  font-size: 36px;
+  color: #383E56;
+
+}
+
+.textbox{
+  display: inline-block;
+  font-size: 19px;
+  padding: 38px 40px;
+  color: #383E56;;
+}
+
+.btnbox{
+  cursor: pointer;
+  width: 155px;
+  height: 49px;
+  background-color: #F875AA;
+  color: #FFFFFF;
+  border: none;
+  border-radius: 8px;
+  margin-top: 50%;
+  margin-right: 29px;
+  align-items: right;
+}
+
 @media(max-width:850px) {
   .rodcoluna{
     width: 100%;
@@ -197,8 +280,10 @@ footer{
     font-weight: 600;
   
   }
+  .textbox{
+    font-size: 14px;
+  }
 }
-
 .rodtext{
   color: #FFFFFF;
   margin-top: 7%;
