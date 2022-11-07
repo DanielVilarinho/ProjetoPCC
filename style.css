@@ -284,36 +284,38 @@ footer{
     font-size: 14px;
   }
 }
+.rodtext{
+  color: #FFFFFF;
+  margin-top: 7%;
+  margin-bottom: 2px;
+  padding: 0;
+  text-align: center;
+  margin-bottom: -50px;
+}
 
-@media(max-width:680px) {
-  .textbox{
-    display: none;
-  }
+.coluna {
+  float: left;
+  width: 33.33%;
+  padding: 5px;
+  text-align: center;
+}
 
-  #img1{
-    width: 240px;
-    height: 216px;
-    display: inline-block;
+.linha::after {
+  content: "";
+  clear: both;
+  display: table;
+}
+
+@media screen and (max-width: 999px) {
+  .coluna {
+    width: 100%;
   }
-  
-  #img2{
-    width: 240.65px;
-    height: 216px;
-    display: inline-block;
-  }
-  
-  #img3{
-    width:240.65px;
-    height: 216px;
-    display: inline-block;
-  }
-  
-  #img4{
-    width: 240px;
-    height: 216px;
-    display: inline-block;
+  .topico {
+    text-align: center;
+    justify-content: center;
   }
 }
+
 
 .cards-prod{
 
@@ -364,4 +366,61 @@ footer{
 .valorprod span{
   font-size: 23px;
   font-weight: 800;
+}
+
+.topico{
+  margin: 5vw;
+  text-align: left;
+  justify-content: center;
+  font-size: 24px;
+}
+
+.botao{
+  align-content: center;
+  float: center;
+  background: #F875AA;
+  color: white;
+  border-radius: 8px;
+  width: 232px;
+  height: 44px;
+  font-size: 24px;
+}
+
+@media screen and (max-width: 999px) {
+  .sobre {
+    width: 100%;
+  }
+}
+
+.sobre{
+  width: 50vw;
+  align-content: flex-start;
+  text-align: center;
+	padding: 5vw;
+	background-color: #d9d9d9;
+	border-radius: 3px;
+	margin: 5px;
+	font-size: 15px;
+}
+
+#mapa{
+  display: flex;
+  justify-content: center;
+}
+
+@media screen and (max-width: 999px){
+  #mapa{
+    overflow: hidden;
+    padding-bottom: 40%;
+    position: relative;
+    height: 0;
+    margin: 5vw;
+  }
+  #mapa iframe{
+    left:0;
+    top: 0;
+    height: 100%;
+    width: 100%;
+    position: absolute;
+  }
 }
