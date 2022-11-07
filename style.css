@@ -384,7 +384,7 @@ footer{
   color: #FFFFFF;
   border: none;
   border-radius: 8px;
-  margin: 10vw;
+  margin: 10vw 7vw 10vw 7vw;
 }
 
 @media screen and (max-width: 999px) {
