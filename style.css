@@ -144,11 +144,6 @@ servicos.html main{
     transform: rotate(45deg) translate(-5px, -7px);
   }
 
-  #mapa{
-    display: flex;
-    justify-content: center;
-  }
-
 footer{
   background-color: #383E56;
   padding: 80px 0;
@@ -179,7 +174,7 @@ footer{
 .rodcoluna ul li{
   color: #FFFFFF;
   list-style: none;
-  margin-bottom: 5px;
+  margin-bottom: 6px;
 }
 
 .rodape{
@@ -288,12 +283,37 @@ footer{
   }
 }
 
-.rodtext{
-  color: #FFFFFF;
-  margin-top: 7%;
-  margin-bottom: 2px;
-  padding: 0;
-  text-align: center;
-  margin-bottom: -50px;
+@media(max-width:680px) {
+  .textbox{
+    display: none;
+  }
+
+  #img1{
+    width: 240px;
+    height: 216px;
+    display: inline-block;
+  }
+  
+  #img2{
+    width: 240.65px;
+    height: 216px;
+    display: inline-block;
+  }
+  
+  #img3{
+    width:240.65px;
+    height: 216px;
+    display: inline-block;
+  }
+  
+  #img4{
+    width: 240px;
+    height: 216px;
+    display: inline-block;
+  }
 }
 
+.iconinsta{
+  margin-left: 5px;
+  margin-bottom: -6px;
+}
