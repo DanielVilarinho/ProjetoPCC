@@ -30,7 +30,7 @@
 
 
 
-/* print_r('Email: ' . $email);
+/* 
         print_r('<br>');
         print_r('Senha: ' . $senha);
         print_r($result);*/
