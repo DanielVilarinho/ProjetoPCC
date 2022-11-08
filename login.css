@@ -99,12 +99,12 @@ h1{
 }
 
 
-button{
+.btnent{
     background-color: #F875AA;
     color: white;
     border: none;
     border-radius: 8%;
-    font-size: 20px;
+    font-size: 20px;    
     padding: 8px 18px;
     font-weight: 500;
     margin-top: 10px;
@@ -112,7 +112,7 @@ button{
     transition: all .4s ease-in-out;
 }
 
-button:hover{
+.btnent:hover{
     background-color: #f09abc;
 
 }

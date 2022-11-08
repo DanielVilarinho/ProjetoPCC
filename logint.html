@@ -14,22 +14,22 @@
         <div class="card">
             <img src="./assets/Lurdinha OG.png" alt="logo-card" id="logcard">
             <h1>Entrar</h1>
-
+            <form action="login.php" method="POST">
             <div class="label-float">
-                <input type='text' id='email' name="" required >
+                <input type='text' id='email' name="email" required >
                 <label for="email">Email</label>
             </div>
 
             <div class="label-float">
-                <input type='password' id='senha' name="" required >
+                <input type='password' id='senha' name="senha" required >
                 <label for="senha">Senha</label>
                 <i class="fa fa-eye" aria-hidden="true"></i>
             </div>
             
             <div class="centralizar">
-                <button>Entrar</button>
+                <input type="submit" class="btnent" nome="submit" value="Entrar">
             </div>
-
+        </form>
             <div class="centralizar">
                 <hr>    
             </div>
@@ -39,4 +39,5 @@
         </div>
     </div>
     <script src="./script.js"> </script>
+
 </html>

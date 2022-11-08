@@ -1,3 +1,13 @@
+<?php
+    session_start();
+    if((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true)){
+        unset($_SESSION['email']);
+        unset($_SESSION['senha']);
+        header('Location: logint.html');  
+    }
+    $log = $_SESSION['email'];
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -14,19 +24,19 @@
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     </head> 
 <body >
-
         <header>
             <nav>
                 <a id="linklogo" href="./index.html">
                 <img id="logo" src="./assets/Lurdinha OG.png" alt="Logo Salão">
                  </a>
+                 <a href="botaosair.php"><button class="btnsair">Sair</button></a>
                 <div class="navbar">
                     <div class="line1"></div>
                     <div class="line2"></div>
                     <div class="line3"></div>
                 </div>
                 <ul class="navlist">
-                    <li><a href="./produtos.html">Produtos</a></li>
+                    <li><a href="./produtos.php">Produtos</a></li>
                     <li><a href="./servicos.html">Serviços</a></li>
                     <li class="contscroll">Contato</li>
                     <li><a href="./cadastro.html" id="ec">Entrar/Cadastrar</a></li>
@@ -54,7 +64,7 @@
 
                     <div class="prodbox">
                         <img id="imgprod" src="https://images.pexels.com/photos/3965545/pexels-photo-3965545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
-                        <p class="descprod">Ultimas tendências em roupas femininas, quebra linha<br></p>
+                        <p class="descprod">Ultimas tendências em roupas femininas, quebra linha um pouco <br></p>
                         <p class="valorprod">Por: <span>R$ 255,71</span></p>
                         <a href="https://www.youtube.com/"> <button class="prodbtn">Fazer pedido</button> </a>
                     </div>
@@ -79,7 +89,7 @@
 
                     <div class="prodbox">
                         <img id="imgprod" src="https://images.pexels.com/photos/3965545/pexels-photo-3965545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
-                        <p class="descprod">Ultimas tendências em roupas femininas, quebra linha</p>
+                        <p class="descprod">Ultimas tendências em roupas femininas, quebra linha um pouco</p>
                         <p class="valorprod">Por: <span>R$ 255,71</span></p>
                         <a href="https://www.youtube.com/"> <button class="prodbtn">Fazer pedido</button> </a>
                     </div>

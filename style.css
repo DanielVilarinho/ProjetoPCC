@@ -496,3 +496,19 @@ footer{
   text-align: center;
 }
 
+.btnsair{
+  width: 60px;
+  height: 35px;
+  background-color: rgb(216, 85, 85);
+  color: white;
+  border: none;
+  margin-top: 20px;
+  margin-left: 30px;
+  cursor: pointer
+  ;
+
+}
+
+.btnsair{
+  background-color: rgb(223, 130, 130);
+}
