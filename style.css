@@ -34,16 +34,14 @@ body{
 }*/
 
 #logo{
-  max-width: 100%;
-  height: auto;
-  display: flex;
-  flex: 33.33%;
-  padding: 1em 0em 0em 1em;
+  padding: 1.1em 1.1em;
+  max-width: 110%;  
+  width: 500px;
 }
 
 @media screen and (max-width:999px) {
   #logo{
-    margin: 1.6em;
+    margin: 0.89em;
     width: 100%;
     max-width: 170px;
     position: relative;
@@ -60,10 +58,10 @@ body{
 }
 
 nav{
-    display:flex;
+    display: flex;
     justify-content: space-between;
-    align-items: top;
     background-color: rgba(217, 217, 217, 0.37);
+    height: 5.59em;
 } 
 
 #ec{
@@ -81,7 +79,7 @@ servicos.html main{
 .navlist{
     list-style: none;
     display: flex;
-    padding: 3%;
+    padding: 2em;
 }
 .navlist .contscroll{
   cursor: pointer;
@@ -153,7 +151,7 @@ servicos.html main{
     }
     .navbar {
       display: block;
-      margin: 40px;
+      margin: 1.7em;
     }
   }
   
