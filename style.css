@@ -26,13 +26,28 @@ body{
   height: 70px;
   width: 164px;
 }
-#logo{
+/*#logo{
     height: 70px;
     width: 164px;
     margin: 25px;
 
+}*/
+
+#logo{
+  margin: 1.7vw;
+  width: 100%;
+  max-width: 400px;
+  height: auto;
 }
 
+@media screen and (max-width:999px) {
+  #logo{
+    margin: 4vw;
+    width: 100%;
+    max-width: 170px;
+    position: relative;
+  }
+}
 
  header{
   background-image: url(./assets/backgroundatualizado.png);
@@ -325,8 +340,9 @@ footer{
 .coluna {
   float: left;
   width: 33.33%;
-  padding: 30px 15px 25px 40px;
+  padding: 1em 2em;
   text-align: center;
+  justify-content: center;
 }
 
 .linha::after {
@@ -339,12 +355,12 @@ footer{
   .coluna {
     width: 100%;
   }
+
   .topico {
     text-align: center;
     justify-content: center;
   }
 }
-
 
 .cards-prod{
   display: flex;
@@ -352,7 +368,6 @@ footer{
   margin-top: 80px;
   margin-top: 40px;
   flex-wrap: wrap;
-
 }
 
 .prodbox{
@@ -363,6 +378,7 @@ footer{
   align-items: center;
   box-shadow: 3px 3px 9px 3px #00000070;
 }
+
 .iconinsta{
   margin-left: 5px;
   margin-bottom: -6px;
@@ -400,15 +416,17 @@ footer{
 }
 
 .topico{
-  margin: 6vw;
+  margin: 8em 2em;
+  /*padding: 140px 15px 0px 15px;*/
   text-align: left;
-  justify-content: center;
+  display: grid;
   font-size: 21px;
   line-height: 200%;
+  display: block;
+  background: yellow;
 }
 
 .botao{
-  display: inline-block;
   cursor: pointer;
   width: 232px;
   height: 44px;
@@ -418,7 +436,7 @@ footer{
   border: none;
   border-radius: 8px;
   align-items: center;
-  margin: 10vw 7vw 10vw 7vw;
+  margin: 9em 0em;
 }
 
 .prodbtn{
@@ -432,9 +450,8 @@ footer{
   margin-top: 19px;
   margin-left: 50px;
   transition: 0.3s;
-
-
 }
+
 .prodbtn:hover{
   background-color: #f09abc;
 
@@ -455,34 +472,29 @@ footer{
   align-content: flex-start;
   text-align: center;
 	padding: 5vw;
-	background-color: #d9d9d9;
+  background-color: #F875AA;
+  color: #FFFFFF;
 	border-radius: 3px;
 	margin: 5px;
 	font-size: 15px;
 }
 
-#mapa{
-  display: flex;
-  justify-content: center;
+#googlemaps {
+  position: relative;
+  padding-bottom: 75%;
+  height: 0;
+  overflow: hidden;
+  margin: 3em 5em 3em 5em;
 }
 
-@media screen and (max-width: 999px){
-  #mapa{
-    overflow: hidden;
-    padding-bottom: 40%;
-    position: relative;
-    height: 0;
-    margin: 5vw;
-  }
-  #mapa iframe{
-    left:0;
-    top: 0;
-    height: 100%;
-    width: 100%;
-    position: absolute;
-  }
-}
+#googlemaps iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100% !important;
+  height: 100% !important;
 
+}
 
 .prodbtn{
   cursor: pointer;
