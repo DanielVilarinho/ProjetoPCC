@@ -124,7 +124,7 @@ confirmarsenha.addEventListener('keyup', () => {
 })
 
 function cadastrar(){
-  if(validarnome && validaremail && validartelefone && validarconfirmarsenha && validarconfirmarsenha){
+  if(validarnome && validaremail && validartelefone && validarsenha && validarconfirmarsenha){
     msgerro.setAttribute('style', 'display: none')
     msgsucesso.setAttribute('style', 'display: block')
     msgsucesso.innerHTML = 'Cadastro realizado com sucesso'
