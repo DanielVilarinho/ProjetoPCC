@@ -337,31 +337,6 @@ footer{
   margin-bottom: -50px;
 }
 
-.coluna {
-  float: left;
-  width: 33.33%;
-  padding: 1em 2em;
-  text-align: center;
-  justify-content: center;
-}
-
-.linha::after {
-  content: "";
-  clear: both;
-  display: table;
-}
-
-@media screen and (max-width: 999px) {
-  .coluna {
-    width: 100%;
-  }
-
-  .topico {
-    text-align: center;
-    justify-content: center;
-  }
-}
-
 .cards-prod{
   display: flex;
   justify-content: space-around;
@@ -413,17 +388,6 @@ footer{
 .valorprod span{
   font-size: 21px;
   font-weight: 800;
-}
-
-.topico{
-  margin: 8em 2em;
-  /*padding: 140px 15px 0px 15px;*/
-  text-align: left;
-  display: grid;
-  font-size: 21px;
-  line-height: 200%;
-  display: block;
-  background: yellow;
 }
 
 .botao{
@@ -523,4 +487,46 @@ footer{
 
 .btnsair{
   background-color: rgb(223, 130, 130);
+}
+
+.linha {
+  display: flex;
+  flex-direction: row;
+  text-align: center;
+  padding: 1em 1em 1em 1em;
+}
+
+.coluna {
+  background-color: #f1f1f1;
+  padding: 10px;
+  flex: 50%;
+  justify-content: center;
+}
+
+.botao{
+	justify-content: center;
+    margin: 6em 0em;
+}
+
+.topico{
+	margin: 4em 4em;
+  font-size: 24px;
+  line-height: 200%;
+  text-align: left;
+}
+
+/* Responsive layout - makes a one column-layout instead of two-column layout */
+@media screen and (max-width: 999px) {
+  .linha {
+    flex-direction: column;
+  }
+  .botao{
+  	margin: 2em 0em;
+   }
+  .topico{
+   margin: 0em 4em;
+   justify-content: left;
+   text-align: center;
+   font-size: 22px;
+   }
 }
