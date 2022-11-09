@@ -7,7 +7,20 @@
     $telefone= $_POST['telefone'];
     $senha= $_POST['senha'];
 
+
+    $sql = "SELECT * FROM usuarios WHERE email = '$email' ";
+
+    $resultado = $conexao->query($sql);
+
+    if(mysqli_num_rows($resultado)<1){
+        header('Location: logint.html');
+        echo "deu merda";
+    }else{
+        header('Location: cadastro.html');
+    }
+
+
     $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,email,telefone,senha) VALUES('$nome','$email','$telefone','$senha')");
-    header('Location: login.html');
+    header('Location: logint.html');
 
 ?>

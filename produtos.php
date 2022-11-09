@@ -1,5 +1,5 @@
 <?php
-/*
+
     session_start();
     if((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true)){
         unset($_SESSION['email']);
@@ -7,13 +7,7 @@
         header('Location: logint.html');  
     }
     $log = $_SESSION['email'];
-*/
 
-session_start();
-    if((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true)){
-        echo "Sem sessão";
-    }else{
-        echo "com sessão";}
     
 ?>
 
