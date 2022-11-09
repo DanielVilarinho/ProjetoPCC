@@ -34,10 +34,11 @@ body{
 }*/
 
 #logo{
-  margin: 0.8em;
-  width: 100%;
-  max-width: 400px;
+  max-width: 100%;
   height: auto;
+  display: flex;
+  flex: 33.33%;
+  padding: 1em 0em 0em 1em;
 }
 
 @media screen and (max-width:999px) {
@@ -46,6 +47,7 @@ body{
     width: 100%;
     max-width: 170px;
     position: relative;
+    padding: 0em 0em 0em 0em;
   }
 }
 
@@ -448,7 +450,8 @@ footer{
   padding-bottom: 75%;
   height: 0;
   overflow: hidden;
-  margin: 3em 5em 3em 5em;
+  padding: 40em 0em 0em 0em;
+  margin: 1em 2em;
 }
 
 #googlemaps iframe {
@@ -457,7 +460,6 @@ footer{
   left: 0;
   width: 100% !important;
   height: 100% !important;
-
 }
 
 .prodbtn{
