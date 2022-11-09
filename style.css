@@ -34,7 +34,7 @@ body{
 }*/
 
 #logo{
-  margin: 1.7vw;
+  margin: 0.8em;
   width: 100%;
   max-width: 400px;
   height: auto;
@@ -42,7 +42,7 @@ body{
 
 @media screen and (max-width:999px) {
   #logo{
-    margin: 4vw;
+    margin: 1.6em;
     width: 100%;
     max-width: 170px;
     position: relative;
@@ -521,10 +521,10 @@ footer{
     flex-direction: column;
   }
   .botao{
-  	margin: 2em 0em;
+  	margin: 1em 0em;
    }
   .topico{
-   margin: 0em 4em;
+   margin: 0em 1em;
    justify-content: left;
    text-align: center;
    font-size: 22px;
