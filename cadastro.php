@@ -5,7 +5,7 @@
     $nome= $_POST['nome'];
     $email= $_POST['email'];
     $telefone= $_POST['telefone'];
-    $senha= $_POST['senha'];
+    $senha= $_POST['senha'];    
 
 
     $sql = "SELECT * FROM usuarios WHERE email = '$email' ";
@@ -14,7 +14,6 @@
 
     if(mysqli_num_rows($resultado)<1){
         header('Location: logint.html');
-        echo "deu merda";
     }else{
         header('Location: cadastro.html');
     }
