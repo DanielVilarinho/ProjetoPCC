@@ -435,11 +435,11 @@ footer{
   width: 50vw;
   align-content: flex-start;
   text-align: center;
-	padding: 5vw;
+	padding: 3vw;
   background-color: #F875AA;
   color: #FFFFFF;
 	border-radius: 3px;
-	margin: 5px;
+	margin: 2em;
 	font-size: 15px;
 }
 
@@ -512,6 +512,7 @@ footer{
   font-size: 24px;
   line-height: 200%;
   text-align: left;
+  list-style: inside;
 }
 
 /* Responsive layout - makes a one column-layout instead of two-column layout */
@@ -527,5 +528,6 @@ footer{
    justify-content: left;
    text-align: center;
    font-size: 22px;
+   list-style: none;
    }
 }
