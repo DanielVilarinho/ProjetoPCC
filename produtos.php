@@ -69,6 +69,25 @@
                         <p class="valorprod">Por: <span>R$ 20,00</span></p>
                         <a href="https://www.youtube.com/"> <button class="prodbtn">Fazer pedido</button> </a>
                     </div> 
+
+                    <div class="prodbox">
+                        <img id="imgprod" src="https://images.pexels.com/photos/13875783/pexels-photo-13875783.jpeg?cs=srgb&dl=pexels-k%C3%BCbra-arslaner-13875783.jpg&fm=jpg&_gl=1*1s6xl13*_ga*MTI1NDc1NjQ4Ni4xNjY3NTE3MzM3*_ga_8JE65Q40S6*MTY2NzgzMjIxMS4xMC4xLjE2Njc4MzMyNDIuMC4wLjA." alt="">
+                        <p class="descprod">Perfumes O Boticário, Natura, só as melhores marcas para você.</p>
+                        <p class="valorprod">Por: <span>R$ 50,00</span></p>
+                        <a href="https://www.youtube.com/"> <button class="prodbtn">Fazer pedido</button> </a>
+                    </div>
+                    <div class="prodbox">
+                        <img id="imgprod" src="https://images.pexels.com/photos/208052/pexels-photo-208052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+                        <p class="descprod">Maquiagem das melhores marcas e com os melhores preços.</p>
+                        <p class="valorprod">Por: <span>R$ 20,00</span></p>
+                        <a href="https://www.youtube.com/"> <button class="prodbtn">Fazer pedido</button> </a>
+                    </div>
+                    <div class="prodbox">
+                        <img id="imgprod" src="https://images.pexels.com/photos/3965545/pexels-photo-3965545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+                        <p class="descprod">Últimas tendências em roupas femininas.<br></p>
+                        <p class="valorprod">Por: <span>R$ 20,00</span></p>
+                        <a href="https://www.youtube.com/"> <button class="prodbtn">Fazer pedido</button> </a>
+                    </div> 
                 </div>
 
             </section>
