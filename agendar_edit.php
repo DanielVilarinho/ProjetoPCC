@@ -1,3 +1,47 @@
+<?php
+
+include_once('conn.php');
+include_once('conexao.php');
+session_start();
+if((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true)){
+    unset($_SESSION['email']);
+    unset($_SESSION['senha']);
+    header('Location: logint.html');  
+}
+$log = $_SESSION['email'];
+
+if(!empty($_GET['id'])){
+    $id = $_GET['id'];
+
+    $sql = "SELECT *,categoria_servico.nome_categoria,servicos.nome_servico FROM agendamento 
+    INNER JOIN categoria_servico ON agendamento.id_categoria=categoria_servico.id_categoria
+    INNER JOIN servicos ON agendamento.id_servico=servicos.id_servico
+    WHERE id_agendamento=$id";
+
+    $result = $conexao->query($sql);
+
+    if($result->num_rows>0){
+
+        while($resagen = mysqli_fetch_assoc($result)){
+            $nome_servico = $resagen['nome_servico'];
+            $nome_categoria = $resagen['nome_categoria'];
+            $id_categoria = $resagen['id_categoria'];
+            $id_agendamento = $resagen['id_agendamento'];
+            $id_servico = $resagen['id_servico'];
+            $data_m = $resagen['data_m'];
+            $horario = $resagen['horario'];
+            $usuario_email = $resagen['usuario_email'];
+    }}else{
+        header('Location: agendamento_lista.php');
+    }
+    }
+
+
+
+?>
+
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -8,69 +52,93 @@
         <link rel="preconnect" href="https://fonts.googleapis.com/%22%3E
         <link rel="preconnect" href="https://fonts.gstatic.com/" crossorigin>
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
+        <link href="agendar.css" rel="stylesheet">
         <link href="style.css" rel="stylesheet">
         <link rel="icon" type="image/x-icon" href="./assets/Lurdinha-OG.ico">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
     </head> 
 <body >
+    <header>
+        <nav>
+            <a id="linklogo" href="./index.html">
+            <img id="logo" src="./assets/Lurdinha OG.png" alt="Logo Salão">
+             </a>
+            <div class="navbar">
+                <div class="line1"></div>
+                <div class="line2"></div>
+                <div class="line3"></div>
+            </div>
+            <ul class="navlist">
+                <li><a href="./produtos.php">Produtos</a></li>
+                <li><a href="./servicos.html">Serviços</a></li>
+                <li class="contscroll">Contato</li>
+                <li><a href="./cadastro.html" id="ec">Entrar/Cadastrar</a></li>
 
-        <header>
-            <nav>
-                <a id="linklogo" href="./index.html">
-                <img id="logo" src="./assets/Lurdinha OG.png" alt="Logo Salão">
-                 </a>
-                <div class="navbar">
-                    <div class="line1"></div>
-                    <div class="line2"></div>
-                    <div class="line3"></div>
-                </div>
-                <ul class="navlist">
-                    <li><a href="./produtos.php">Produtos</a></li>
-                    <li><a href="./servicos.html">Serviços</a></li>
-                    <li class="contscroll">Contato</li>
-                    <li><a href="./cadastro.html" id="ec">Entrar/Cadastrar</a></li>
+            </ul>
+        </nav>
+    </header>  
+    
+    <main>
+            <form action="agendar_editsave.php" method="POST">
+            <div class="centro">
+            <div class="topo">
+            <H1>Agendar Serviço</H1>
+            <label class="lbtesterc" for="tester">Categoria</label>
+            <select id="categoria" name="categoria" class="tester" required>
+            <option value="1"
+                <?php 
+                    if($id_categoria == 1)
+                    {
+                        echo "selected";
+                    }
+                ?>>Designer de sobrancelha</option>
 
-                </ul>
-            </nav>
-        </header>
+            <option value="2"
+                <?php 
+                    if($id_categoria == 2)
+                    {
+                        echo "selected";
+                    }
+                ?>>Manicure</option>
 
-        <main>
-            <section class="servicos">
-                <div class="cards">
+            <option value="3"
+                <?php 
+                    if($id_categoria == 3)
+                    {
+                        echo "selected";
+                    }
+                ?>>Cabelo</option>
 
-                <h1>Designer de sobrancelha</h1>
-                <div class="servbox">
-                    <img class="imgbox" id="img1" src="https://images.pexels.com/photos/5178009/pexels-photo-5178009.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
-                    <p class="textbox">Profissionais com vasta experiência e prontas para encontrar o design adequado para você. Procedimento na cera, na linha, na navalha ou pinça.</p>
-                    <a href="./agendar.php"> <button class="btnbox">Agendar um horario</button> </a>
-                </div>
+            <option value="4"
+                <?php 
+                    if($id_categoria == 4)
+                    {
+                        echo "selected";
+                    }
+                ?>>Maquiagem</option>
 
-                <h1>Manicure</h1>
-                <div class="servbox">
-                    <img class="imgbox" id="img2" src="https://images.pexels.com/photos/3997391/pexels-photo-3997391.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
-                    <p class="textbox">Uma equipe de peso que faz com delicadeza e  conforme sua preferência manicure, pedicure, fibra de vidro. Colocar um pouquinho mais de texto,</p>
-                    <a href="./agendar.php"> <button class="btnbox">Agendar um horario</button> </a>
-                </div>
+           </select>
 
-                <h1>Cabelo</h1>
-                <div class="servbox">
-                    <img class="imgbox" id="img3" src="https://images.pexels.com/photos/3993447/pexels-photo-3993447.jpeg?cs=srgb&dl=pexels-cottonbro-studio-3993447.jpg&fm=jpg&_gl=1*ucgj3a*_ga*MTI1NDc1NjQ4Ni4xNjY3NTE3MzM3*_ga_8JE65Q40S6*MTY2Nzc4NTEyNC42LjAuMTY2Nzc4NTEyNC4wLjAuMA.." alt="">
-                    <p class="textbox">Cabeleireiras com anos de prática e conhecimento para realização de procedimentos químicos, tratamentos, penteados, coloração, corte e muito mais.</p>
-                    <a href="./agendar.php"> <button class="btnbox">Agendar um horario</button> </a>
-                </div>
+           <label class="lbtesters" for="tester">Serviço</label>
 
-                <h1>Maquiagem</h1>
-                <div class="servbox">
-                    <img class="imgbox" id="img4" src="https://images.pexels.com/photos/7290123/pexels-photo-7290123.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
-                    <p class="textbox">Desde de maquiagens simples até as mais  sofisticadas, de acordo com as tendências. Colocar um pouquinho mais de texto, para quebrar a linha</p>
-                    <a href="./agendar.php"> <button class="btnbox">Agendar um horario</button> </a>
-                </div>
-                </div>
-                </div>
+           <select id="servico" name="servico" class="tester" required>
+            <option value=""><?php echo $nome_servico ?></option>
+           </select>
+           
+           <label class="lbtesterd" for="tester">Data</label>
+           <input type="date" id="testerdata" name="data" class="tester" value="<?php echo $data_m ?>" required>
 
-            </section>
+           <label class="lbtesterh" for="tester">Horario</label>
+           <input type="time" id="testerhora" name="horario" class="tester" value="<?php echo $horario ?>" required>
+            
+           <input type="hidden" name="id" value="<?php echo $id ?>">
+           <input type="submit" value="Editar" name="editar" class="btnagendar"></input>
+           </div>
+        </div>
+        </form>
         </main>
+
         <footer>
             <div class="rodape-container">
                 <div class="rodape">
@@ -113,7 +181,7 @@
             <div class="rodtext">© 2022. Lurdinha Cabeleireira | Todos os direitos reservados. Site desenvolvido por alunos de graduação em Ciência da Computação</div>
         </footer>
         <script src="./mobile.js"> </script>
+        <script src="./agendar.js"> </script>
 </body>
 
 </html>
-        
