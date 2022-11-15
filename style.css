@@ -292,7 +292,7 @@ footer{
   display: inline-block;
   font-size: 19px;
   padding: 38px 40px;
-  color: #383E56;;
+  color: #383E56;
 }
 
 .btnbox{
@@ -355,8 +355,8 @@ footer{
 }
 
 .iconinsta{
-  margin-left: 5px;
-  margin-bottom: -6px;
+  margin-left: 0.05em;
+  margin-bottom: -0.6em;
 }
 
 #imgprod{
@@ -435,20 +435,20 @@ footer{
   width: 50vw;
   align-content: flex-start;
   text-align: center;
-	padding: 5vw;
+	padding: 3.3em;
   background-color: #F875AA;
   color: #FFFFFF;
 	border-radius: 3px;
-	margin: 5px;
+	margin: 2em;
 	font-size: 15px;
 }
 
 #googlemaps {
   position: relative;
   padding-bottom: 75%;
-  height: 0;
+  height: 0em;
   overflow: hidden;
-  padding: 40em 0em 0em 0em;
+  padding: 25em 0em 0em 0em;
   margin: 1em 2em;
 }
 
@@ -480,9 +480,7 @@ footer{
   border: none;
   margin-top: 20px;
   margin-left: 30px;
-  cursor: pointer
-  ;
-
+  cursor: pointer;
 }
 
 .btnsair{
@@ -497,7 +495,6 @@ footer{
 }
 
 .coluna {
-  background-color: #f1f1f1;
   padding: 10px;
   flex: 50%;
   justify-content: center;
@@ -505,7 +502,7 @@ footer{
 
 .botao{
 	justify-content: center;
-    margin: 7em 0em;
+    margin: 6.66em 0em;
 }
 
 .topico{
@@ -513,6 +510,7 @@ footer{
   font-size: 24px;
   line-height: 200%;
   text-align: left;
+  list-style: inside;
 }
 
 /* Responsive layout - makes a one column-layout instead of two-column layout */
@@ -528,6 +526,7 @@ footer{
    justify-content: left;
    text-align: center;
    font-size: 22px;
+   list-style: none;
    }
 }
 
