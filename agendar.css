@@ -113,22 +113,104 @@ select{
 
 .tabela{
     background-color: pink;
-    width: 800px;
+    opacity: 90%;
+    width: 70%;
     align-items: center;
     justify-content: center;
     height: 40px;
-    margin-top: 80px;
+    margin-top: 30px;
     margin-bottom: 80px;
-    margin-left: 25%;
+    margin-left: 15%;
+    margin-right: 15%;
     border-radius: 10px;
+    border-collapse: collapse;
+}
+
+.h1tb{
+text-align: center;
+margin-top: 30px;
+margin-bottom: 30px;
+font-family: 'Roboto';
+color: #383E56;;
 }
 th{
    padding: 10px 0;
+   border: 1px solid black;
 }
 
 td{
         text-align: center;
-
+        border: 1px solid black;
     }
 
 
+.backed{
+    background-color: blue;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 2px 2px 1px #00000070;
+    transition: 0.3s;
+}
+
+.backed:hover{
+    background-color: rgb(102, 102, 243);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+.backdel{
+    background-color: red;
+    padding: 5px;
+    border-radius: 5px;
+    box-shadow: 1px 1px 1px 1px #00000070;
+    transition: 0.3s;    
+}
+
+.btn_delete{
+    margin-left: 1.5px;
+}
+
+.backdel:hover{
+    background-color: rgb(252, 97, 97);
+    padding: 5px;
+    border-radius: 5px;
+}
+
+
+.cardagenda{
+    display: flex;
+    background-color: rgba(255, 255, 255, 0.801);
+    margin-bottom: 20px;
+    margin-top: 20px;
+    width: 800px;
+    height: 120px;
+    border-radius: 8px;
+    box-shadow: 3px 6px 9px 3px #00000070;
+    justify-content: space-between;
+    
+}
+
+.agendacentro{
+    display: flex;
+    justify-content: center;
+}
+
+.textoagenda{
+    font-size: 15px;
+    font-weight: 600;
+    color: #383E56;
+    margin-top: 12px;
+    margin-left: 70px;
+
+}
+
+.textoagenda p{
+    margin-bottom: 2px;
+}
+.btnsagenda{
+    margin-top: 2px;
+    display: flex;
+    flex-direction: column;
+    margin-right: 40px;
+    justify-content: space-around;
+}

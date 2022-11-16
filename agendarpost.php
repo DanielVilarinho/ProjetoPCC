@@ -101,5 +101,5 @@ if (isset($_POST['agendar'])){
         echo "deu merda";
     }
 
-
+header('Location: agendamento_lista.php')
 ?>

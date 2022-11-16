@@ -51,6 +51,7 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
         <link rel="icon" type="image/x-icon" href="./assets/Lurdinha-OG.ico">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+        
        
     </head> 
 <body >
@@ -75,15 +76,19 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
     </header>  
     <main>
         <div>
+            <?php
 
-            <table class="tabela">
+            if($log == "lurdinha@adm.com"){
+            echo "<table class='tabela'>";
 
-                <thead>
-                    <tr>
+                echo "<thead>";
+                    "<tr>";
+}?>
                         <?php
 
 
                     if($log == "lurdinha@adm.com"){
+                        echo "<h1 class='h1tb'>Agendamentos</h1>";
                         echo "<th scope='col'>id</th>";
                         echo "<th scope='col'>Email Cliente</th>";
                         echo "<th scope='col'>Categoria</th>";
@@ -93,19 +98,7 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
                         echo "<th scope='col'>Preço</th>";
                         echo "<th scope='col'>Situação</th>";
                         echo "<th scope='col'>Ações</th>";
-                    }else{
-
-                        echo "<th scope='col'>id</th>";
-                        echo "<th scope='col'>Categoria</th>";
-                        echo "<th scope='col'>Serviço</th>";
-                        echo "<th scope='col'>Data</th>";
-                        echo "<th scope='col'>Horario</th>";
-                        echo "<th scope='col'>Preço</th>";
-                        echo "<th scope='col'>Situação</th>";
-                        echo "<th scope='col'>Ações</th>";
                     }
-
-
                         ?>
                     </tr>
 
@@ -132,53 +125,61 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
                         </a></td>";
                             echo "</tr>";
                             }
-                        }else{
-                        foreach($result as $agendas){
-                            echo "<tr>";
-                            echo "<td>".$agendas['id_agendamento']."</td>";
-                            echo "<td>".$agendas['nome_categoria']."</td>";
-                            echo "<td>".$agendas['nome_servico']."</td>";
-                            echo "<td>".$agendas['data_m']."</td>";
-                            echo "<td>".$agendas['horario']."</td>";
-                            echo "<td>"."R$ ".$agendas['valor_servico']."</td>";
-                            echo "<td></td>";
-                            echo "<td>
-                            <a class='btn_edit' href='agendar_edit.php?id=$agendas[id_agendamento]'>
-                                 <svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='blue' class='bi bi-pencil' viewBox='0 0 16 16'>
-                                     <path d='M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z'/>
-                                 </svg>
-                            </a>
-
-                            <a class='btn_delete' href='agendar_delete.php?id=$agendas[id_agendamento]'>
-                                <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='red' class='bi bi-trash-fill' viewBox='0 0 16 16'>
-                                    <path d='M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z'/>
-                                </svg>
-
-                            </a>
-                            </td>";
-                            echo "</tr>";
-
-                        }}
+                        }
 
                     ?>
-
-
-
                 </tbody>
-
-
-
-
-
             </table>
+            </div>
+
+                        <div>
+
+
+
+                    <?php
+                        if($log != "lurdinha@adm.com"){
+                            echo "<h1 class='h1tb'>Meus Agendamentos</h1>";
+                            foreach($result as $agendas){
+
+                            echo "<div class='agendacentro'>
+                                    <div class='cardagenda'>
+                                        <div class='textoagenda'>
+                                        <p>Categoria: $agendas[nome_categoria]</p>
+                                        <p>Serviço: $agendas[nome_servico]</p>
+                                        <p>Agendado para: $agendas[data_m]</p>
+                                        <p>Horario: $agendas[horario]</p>
+                                        <p>Preco: R$ $agendas[valor_servico]</p>
+                                        </div>    
+                                        <div class='btnsagenda'>
+                                            <div class='backed'>
+                                                <div class='editagenda'>
+                                                    <a class='btn_edit' href='agendar_edit.php?id=$agendas[id_agendamento]'>
+                                                        <svg xmlns='http://www.w3.org/2000/svg' width='25' height='25' fill='white' class='bi bi-pencil' viewBox='0 0 16 16'>
+                                                            <path d='M12.146.146a.5.5 0 0 1 .708 0l3 3a.5.5 0 0 1 0 .708l-10 10a.5.5 0 0 1-.168.11l-5 2a.5.5 0 0 1-.65-.65l2-5a.5.5 0 0 1 .11-.168l10-10zM11.207 2.5 13.5 4.793 14.793 3.5 12.5 1.207 11.207 2.5zm1.586 3L10.5 3.207 4 9.707V10h.5a.5.5 0 0 1 .5.5v.5h.5a.5.5 0 0 1 .5.5v.5h.293l6.5-6.5zm-9.761 5.175-.106.106-1.528 3.821 3.821-1.528.106-.106A.5.5 0 0 1 5 12.5V12h-.5a.5.5 0 0 1-.5-.5V11h-.5a.5.5 0 0 1-.468-.325z'/>
+                                                        </svg>
+                                                    </a>
+                                                </div>
+                                            </div>
+
+                <div class='backdel'>
+                    <div class='deletagenda'>
+                        <a class='btn_delete' href='agendar_delete.php?id=$agendas[id_agendamento]'>
+                            <svg xmlns='http://www.w3.org/2000/svg' width='23' height='23' fill='white' class='bi bi-trash-fill' viewBox='0 0 16 16'>
+                                <path d='M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z'/>
+                            </svg>
+                        </a>
+                    </div>
+                </div>
+             </div>
+        </div>   
+     </div>";
+
+                            }}
 
 
 
 
-
-
-
-
+     ?>
         </div>
 
         <footer>
