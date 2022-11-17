@@ -14,6 +14,7 @@ categoriaSelect.onchange = () =>{
 
 }
 
+
 function pad(valor) { 
     return valor.toString().padStart(2, '0');
 }
