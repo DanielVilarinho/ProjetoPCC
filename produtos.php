@@ -1,12 +1,10 @@
 <?php
 
     session_start();
-    if((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true)){
-        unset($_SESSION['email']);
-        unset($_SESSION['senha']);
-        header('Location: logint.html');  
+    if((isset($_SESSION['email']) == true) and (isset($_SESSION['senha']) == true)){
+        $log = $_SESSION['email'];
     }
-    $log = $_SESSION['email'];
+
 
     
 ?>
@@ -32,7 +30,6 @@
                 <a id="linklogo" href="./index.html">
                 <img id="logo" src="./assets/Lurdinha OG.png" alt="Logo Salão">
                  </a>
-                 <a href="botaosair.php"><button class="btnsair">Sair</button></a>
                 <div class="navbar">
                     <div class="line1"></div>
                     <div class="line2"></div>
@@ -42,7 +39,35 @@
                     <li><a href="./produtos.php">Produtos</a></li>
                     <li><a href="./servicos.html">Serviços</a></li>
                     <li class="contscroll">Contato</li>
-                    <li><a href="./cadastro.html" id="ec">Entrar/Cadastrar</a></li>
+                    <?php
+
+                    if((isset($_SESSION['email']) == true) and (isset($_SESSION['senha']) == true)){
+                        include_once('conn.php');
+
+                        $query = $conn->prepare("SELECT LEFT(usuarios.nome, POSITION(' ' IN usuarios.nome) - 1) as nome
+                         FROM usuarios 
+                         WHERE usuarios.email=:usuario_email");
+                        $usme = ['usuario_email' => $log];  
+                        $query->execute($usme);
+                        $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    
+                        foreach($result as $user){
+                        echo "<li class='optlog'><a class='usernome'><figure id='blocoAvatarUsuario' class='sc-eVspGN exeuon'><img src='./assets/Lurdinha-OG.ico' alt='Ninja'></figure>Olá,$user[nome]</a>
+                        <ul class='submenu'>
+    
+                        <li><a class='colorsuba' href='./agendamento_lista.php'>Agendamemtos</a></li>
+                        <li><span>| </span></li>
+                        <li><a class='colorsubb'href='botaosair.php'>Sair</a></li>
+                        </ul>
+                    </li> ";  
+                    }       
+                        
+                    }else{
+                        echo "<li><a href='./logint.html' id='ec'>Entrar/Cadastrar</a></li>";
+                       
+
+                    }
+                    ?>
 
                 </ul>
             </nav>
@@ -65,7 +90,7 @@
                     </div>
                     <div class="prodbox">
                         <img id="imgprod" src="https://images.pexels.com/photos/3965545/pexels-photo-3965545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
-                        <p class="descprod">Últimas tendências em roupas femininas.<br></p>
+                        <p class="descprod">Últimas tendências em roupas femininas<br><br></p>
                         <p class="valorprod">Por: <span>R$ 20,00</span></p>
                         <a href="https://www.youtube.com/"> <button class="prodbtn">Fazer pedido</button> </a>
                     </div> 

@@ -61,7 +61,7 @@ nav{
     display: flex;
     justify-content: space-between;
     background-color: rgba(217, 217, 217, 0.37);
-    height: 5.59em;
+    height: 120px;
 } 
 
 #ec{
@@ -472,21 +472,23 @@ footer{
   text-align: center;
 }
 
-.btnsair{
-  width: 60px;
-  height: 35px;
-  background-color: rgb(216, 85, 85);
-  color: white;
+#sairbtn{
+  width: 50px;
+  height: 30px;
+  background-color: #F875AA;
   border: none;
-  margin-top: 20px;
+  border-radius: 8px;
+  color: white;
+  box-shadow: 1px 1px 1px 0px #00000070;
   margin-left: 30px;
-  cursor: pointer;
+  margin-top: -10px;
+  margin-right: 20px;
+  cursor:pointer;
 }
 
-.btnsair{
-  background-color: rgb(223, 130, 130);
+#sairbtn:hover{
+  background-color: #fca7c9;
 }
-
 .linha {
   display: flex;
   flex-direction: row;
@@ -642,4 +644,75 @@ select{
   font-size: 18px;
   font-weight: 600;
   margin-bottom: 40px;
+}
+
+#blocoAvatarUsuario{
+  display: flex;
+  width: 35px;
+  height: 35px;
+  margin-top: -8px;
+  padding: 1.9px 0px;
+}
+
+.navlist .optlog{
+  margin-left: 60px;
+  margin-right: -70px;
+  
+}
+
+.navlist .optlog a{
+display: flex;
+width: 150px;
+cursor: default;
+}
+
+.navlist .optlog a:hover{
+  font-size: 16px;
+  color: white;
+}
+.navlist .optlog ul li{
+  list-style: none;
+}
+
+.navlist .optlog .colorsuba{
+  font-size: 13px;
+  color: white;
+  font-weight: 500;
+  margin-top: 1px;
+  cursor: pointer;
+
+}
+.navlist .optlog .colorsubb{
+  font-size: 13px;
+  color: white;
+  font-weight: 500;
+  margin-left: -50px;
+  margin-top: 2px;
+  cursor: pointer;
+
+}
+
+
+.navlist .optlog .colorsuba:hover{
+  font-size: 13px;
+  color: rgba(255, 255, 255, 0.685);
+  text-decoration: underline;
+}
+.navlist .optlog .colorsubb:hover{
+  font-size: 13px;
+  color: red;
+  text-decoration: underline;
+}
+
+.submenu{
+display: flex;  
+}
+
+.optlog span{
+  color: #FFFFFF;
+  font-size: 16px;
+  font-weight: 800;
+  margin-left: -40px;
+
+
 }

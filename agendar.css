@@ -139,8 +139,10 @@ th{
 }
 
 td{
-        text-align: center;
-        border: 1px solid black;
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+        
     }
 
 
@@ -182,8 +184,8 @@ td{
     background-color: rgba(255, 255, 255, 0.801);
     margin-bottom: 20px;
     margin-top: 20px;
-    width: 800px;
-    height: 120px;
+    width: 850px;
+    height: 130px;
     border-radius: 8px;
     box-shadow: 3px 6px 9px 3px #00000070;
     justify-content: space-between;
@@ -199,13 +201,13 @@ td{
     font-size: 15px;
     font-weight: 600;
     color: #383E56;
-    margin-top: 12px;
+    margin-top: 13px;
     margin-left: 70px;
 
 }
 
 .textoagenda p{
-    margin-bottom: 2px;
+    margin-bottom: 3px;
 }
 .btnsagenda{
     margin-top: 2px;

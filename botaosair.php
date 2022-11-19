@@ -3,5 +3,5 @@
 session_start();
 unset($_SESSION['email']);
 unset($_SESSION['senha']);
-header('Location: logint.html');
+header('Location: index.html');
 ?>
