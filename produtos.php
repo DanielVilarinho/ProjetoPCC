@@ -90,7 +90,11 @@
                     </div>
                     <div class="prodbox">
                         <img id="imgprod" src="https://images.pexels.com/photos/3965545/pexels-photo-3965545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
+
                         <p class="descprod">Últimas tendências em roupas femininas<br><br></p>
+
+                        <p class="descprod">Últimas tendências em roupas femininas.<br><br></p>
+
                         <p class="valorprod">Por: <span>R$ 20,00</span></p>
                         <a href="https://www.youtube.com/"> <button class="prodbtn">Fazer pedido</button> </a>
                     </div> 
@@ -109,7 +113,7 @@
                     </div>
                     <div class="prodbox">
                         <img id="imgprod" src="https://images.pexels.com/photos/3965545/pexels-photo-3965545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
-                        <p class="descprod">Últimas tendências em roupas femininas.<br></p>
+                        <p class="descprod">Últimas tendências em roupas femininas.<br><br></p>
                         <p class="valorprod">Por: <span>R$ 20,00</span></p>
                         <a href="https://www.youtube.com/"> <button class="prodbtn">Fazer pedido</button> </a>
                     </div> 
