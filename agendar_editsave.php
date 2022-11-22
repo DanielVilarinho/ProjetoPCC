@@ -9,7 +9,7 @@ if(isset($_POST['editar'])){
     $horario= $_POST['horario'];
 
     $sqlrdit = "UPDATE agendamento
-     SET id_categoria = '$id_categoria', id_servico = '$id_servico', data_m = '$data', horario = '$horario'
+     SET id_categoria = '$id_categoria', id_servico = '$id_servico', data_m = '$data', horario = '$horario',status_ag = 'Alterado'
      WHERE id_agendamento = '$id_agendamento'";
      $result = $conexao->query($sqlrdit);
 

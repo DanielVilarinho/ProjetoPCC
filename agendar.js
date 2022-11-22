@@ -39,10 +39,6 @@ window.addEventListener('DOMContentLoaded', function() {
 
 
 
-
-
-
-
 /*
 campo.addEventListener('input', () => {
     campo.setCustomValidity('');

@@ -81,7 +81,7 @@ $log = $_SESSION['email'];
            <input type="date" id="testerdata" name="data" class="tester" required>
 
            <label class="lbtesterh" for="tester">Horario</label>
-           <input type="time" id="testerhora" name="horario" class="tester" min="09:00" max="19:00" step="900" required>
+           <input type="time" id="testerhora" name="horario" class="tester" min="09:00" max="19:00" step="1800" required>
             
            <input type="submit" value="Agendar" name="agendar" class="btnagendar"></input>
            </div>

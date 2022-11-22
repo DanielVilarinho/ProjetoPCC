@@ -14,7 +14,7 @@ $servico= $_POST['servico'];
 $data= $_POST['data'];
 $horario= $_POST['horario'];
 
-$resultado = mysqli_query($conexao, "INSERT INTO agendamento(id_categoria,id_servico,data_m,horario,usuario_email) VALUES('$categoria','$servico','$data','$horario','$email')");
+$resultado = mysqli_query($conexao, "INSERT INTO agendamento(id_categoria,id_servico,data_m,horario,usuario_email,status_ag) VALUES('$categoria','$servico','$data','$horario','$email','Agendado')");
 
 
 
