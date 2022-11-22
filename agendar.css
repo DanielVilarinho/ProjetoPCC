@@ -111,6 +111,11 @@ select{
     margin-bottom: 40px;
 }
 
+#table-container{
+    overflow-x: auto;
+
+}
+
 .tabela{
     background-color: pink;
     opacity: 90%;
@@ -139,8 +144,10 @@ th{
 }
 
 td{
-        text-align: center;
-        border: 1px solid black;
+    text-align: center;
+    border: 1px solid black;
+    padding: 5px;
+        
     }
 
 
@@ -163,7 +170,8 @@ td{
     padding: 5px;
     border-radius: 5px;
     box-shadow: 1px 1px 1px 1px #00000070;
-    transition: 0.3s;    
+    transition: 0.3s;  
+    cursor: pointer;  
 }
 
 .btn_delete{
@@ -182,8 +190,8 @@ td{
     background-color: rgba(255, 255, 255, 0.801);
     margin-bottom: 20px;
     margin-top: 20px;
-    width: 800px;
-    height: 120px;
+    width: 600px;
+    height: 168px;
     border-radius: 8px;
     box-shadow: 3px 6px 9px 3px #00000070;
     justify-content: space-between;
@@ -199,13 +207,13 @@ td{
     font-size: 15px;
     font-weight: 600;
     color: #383E56;
-    margin-top: 12px;
+    margin-top: 13px;
     margin-left: 70px;
 
 }
 
 .textoagenda p{
-    margin-bottom: 2px;
+    margin-bottom: 4px;
 }
 .btnsagenda{
     margin-top: 2px;

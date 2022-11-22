@@ -50,11 +50,20 @@ function validEmail(email){
   return emailexp.test(email)
 }
 
+
+
+
 nome.addEventListener('keyup', () => {
-  if(nome.value.length <= 1){
-    validarnome = false
-  } else {
+  if(nome.value.length >= 10){
+    labelnome.setAttribute('style', 'color: green')
+    labelnome.innerHTML = 'Nome Completo'
+    nome.setAttribute('style', 'border-color: green')
     validarnome = true
+  } else {
+    labelnome.setAttribute('style', 'color: red')
+    labelnome.innerHTML = 'Nome Completo *Informe o nome completo'
+    nome.setAttribute('style', 'border-color: red')
+    validarnome = false
   }
 })
 
@@ -123,7 +132,7 @@ confirmarsenha.addEventListener('keyup', () => {
   }
 })
 
-function cadastrar(){
+function cadvalid(){
   if(validarnome && validaremail && validartelefone && validarsenha && validarconfirmarsenha){
     msgerro.setAttribute('style', 'display: none')
     msgsucesso.setAttribute('style', 'display: block')

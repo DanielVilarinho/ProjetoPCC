@@ -10,7 +10,7 @@ if((!isset($_SESSION['email']) == true) and (!isset($_SESSION['senha']) == true)
 $log = $_SESSION['email'];
 
 if($log == "lurdinha@adm.com"){
-    $query = $conn->query("SELECT agendamento.id_agendamento, servicos.nome_servico, servicos.valor_servico,categoria_servico.nome_categoria ,agendamento.data_m, agendamento.horario, usuarios.email
+    $query = $conn->query("SELECT agendamento.id_agendamento,agendamento.status_ag, servicos.nome_servico, servicos.valor_servico,categoria_servico.nome_categoria ,agendamento.data_m, agendamento.horario, usuarios.email, usuarios.nome
 FROM agendamento
 INNER JOIN categoria_servico ON agendamento.id_categoria=categoria_servico.id_categoria
 INNER JOIN servicos ON agendamento.id_servico=servicos.id_servico
@@ -20,7 +20,7 @@ ORDER BY `agendamento`.`id_agendamento` ASC;");
     $result = $query->fetchAll(PDO::FETCH_ASSOC);
 }else{
 
-$query = $conn->prepare("SELECT agendamento.id_agendamento, servicos.nome_servico, servicos.valor_servico,categoria_servico.nome_categoria ,agendamento.data_m, agendamento.horario
+$query = $conn->prepare("SELECT agendamento.id_agendamento,agendamento.status_ag, servicos.nome_servico, servicos.valor_servico,categoria_servico.nome_categoria ,agendamento.data_m, agendamento.horario
 FROM agendamento
 INNER JOIN categoria_servico ON agendamento.id_categoria=categoria_servico.id_categoria
 INNER JOIN servicos ON agendamento.id_servico=servicos.id_servico
@@ -48,6 +48,7 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
         <link href="https://fonts.googleapis.com/css2?family=Poppins&display=swap" rel="stylesheet">
         <link href="agendar.css" rel="stylesheet">
         <link href="style.css" rel="stylesheet">
+        <link href="modaluser.css" rel="stylesheet">
         <link rel="icon" type="image/x-icon" href="./assets/Lurdinha-OG.ico">
         <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
@@ -75,7 +76,7 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
         </nav>
     </header>  
     <main>
-        <div>
+        <div id="table-container">
             <?php
 
             if($log == "lurdinha@adm.com"){
@@ -90,6 +91,7 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
                     if($log == "lurdinha@adm.com"){
                         echo "<h1 class='h1tb'>Agendamentos</h1>";
                         echo "<th scope='col'>id</th>";
+                        echo "<th scope='col'>Nome do Cliente</th>";
                         echo "<th scope='col'>Email Cliente</th>";
                         echo "<th scope='col'>Categoria</th>";
                         echo "<th scope='col'>Serviço</th>";
@@ -110,29 +112,52 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
                             foreach($result as $agendas){
                             echo "<tr>";
                             echo "<td>".$agendas['id_agendamento']."</td>";
+                            echo "<td>".$agendas['nome']."</td>";
                             echo "<td>".$agendas['email']."</td>";
                             echo "<td>".$agendas['nome_categoria']."</td>";
                             echo "<td>".$agendas['nome_servico']."</td>";
                             echo "<td>".$agendas['data_m']."</td>";
                             echo "<td>".$agendas['horario']."</td>";
                             echo "<td>"."R$ ".$agendas['valor_servico']."</td>";
-                            echo "<td></td>";
-                            echo "<td> <a class='btn_delete' href='agendar_delete.php?id=$agendas[id_agendamento]'>
-                            <svg xmlns='http://www.w3.org/2000/svg' width='16' height='16' fill='red' class='bi bi-trash-fill' viewBox='0 0 16 16'>
-                                <path d='M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z'/>
+                            echo "<td>".$agendas['status_ag']."</td>";
+                            echo "<td><form method='POST'><input id='inid' type='submit' name='mandarid' value='$agendas[id_agendamento]'><a class='btn_delet' onclick='acao()' id='btncancel'>
+                            <svg xmlns='http://www.w3.org/2000/svg' width='18' height='18' fill='red' class='bi bi-trash-fill' viewBox='0 0 16 16'>
+                            <path d='M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM5.354 4.646a.5.5 0 1 0-.708.708L7.293 8l-2.647 2.646a.5.5 0 0 0 .708.708L8 8.707l2.646 2.647a.5.5 0 0 0 .708-.708L8.707 8l2.647-2.646a.5.5 0 0 0-.708-.708L8 7.293 5.354 4.646z'/>
                             </svg>
-
-                        </a></td>";
+                                
+                        </a></input></form></td>";
                             echo "</tr>";
+                            
                             }
                         }
 
                     ?>
                 </tbody>
             </table>
+
+            </div>
+          
+            <div id="modal-cancel" class="modal-container">
+                <div class="modal">
+                    <button class="btnfechar">X</button>
+                    <h2>Cancelar Agendamento</h2>
+                        <form action="agendar_cancel.php" id="cancel-motivo" method="POST">
+                            <label for="motivo" class="label-motivo" >Motivo do Cancelamento:</label>
+                            <textarea name="motivo" id="motivo" class="motivo-cancel" rows="4" cols="50" form="cancel-motivo" autofocus required></textarea>
+                            <input type="hidden" class="jsid" name="id" value="<?php echo $_POST['mandarid'] ?>">
+                            <input type="submit" value="Confirmar" name="confirmar" class="btnconfirmar"></input>
+
+                        </form>
+
+                </div>
+            </div>        
+           
+           
+           
             </div>
 
-                        <div>
+              
+            <div>
 
 
 
@@ -149,6 +174,7 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
                                         <p>Agendado para: $agendas[data_m]</p>
                                         <p>Horario: $agendas[horario]</p>
                                         <p>Preco: R$ $agendas[valor_servico]</p>
+                                        <p>Status: $agendas[status_ag]</p>
                                         </div>    
                                         <div class='btnsagenda'>
                                             <div class='backed'>
@@ -162,11 +188,13 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
                                             </div>
 
                 <div class='backdel'>
-                    <div class='deletagenda'>
-                        <a class='btn_delete' href='agendar_delete.php?id=$agendas[id_agendamento]'>
+                    <div class='deletagenda'><form method='POST'><input id='iniduser' type='submit' name='mandariduser' value='$agendas[id_agendamento]'>
+                        <a class='btn_delete' onclick='acao()' id='btncancel'>
                             <svg xmlns='http://www.w3.org/2000/svg' width='23' height='23' fill='white' class='bi bi-trash-fill' viewBox='0 0 16 16'>
                                 <path d='M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z'/>
                             </svg>
+                            </input>
+                            </form>
                         </a>
                     </div>
                 </div>
@@ -180,8 +208,26 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
 
 
      ?>
+        
+
+
+
         </div>
 
+        <div id="modaluser-cancel" class="modaluser-container">               
+            <div class="modalcancel">
+            <button class="userbtnfechar">X</button>
+                <h4>Tem certeza que deseja cencelar o agendamento?</h4>
+                <form action="agendar_cancel.php" method="POST">
+                <input type="hidden" class="jsiduser" name="id" value="<?php echo $_POST['mandariduser'] ?>">
+                <input type="Submit" name="sim" value="Sim" id="btnsim">
+                </form>
+                <button id="btnnao" class="btnnao">Não</button>
+            </div>
+
+
+        </div>
+                        </body>
         <footer>
         <div class="rodape-container">
             <div class="rodape">
@@ -226,8 +272,8 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
         <div class="rodtext">© 2022. Lurdinha Cabeleireira | Todos os direitos reservados. Site desenvolvido por alunos de graduação em Ciência da Computação</div>
     </footer>
         <script src="./mobile.js"> </script>
-        <script src="./agendar.js"> </script>
-</body>
+        <script src="./modaluser.js"></script>
+        <script src="./modal.js"></script>
 
 </html>
             

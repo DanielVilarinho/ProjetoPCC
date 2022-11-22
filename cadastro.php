@@ -13,13 +13,11 @@
     $resultado = $conexao->query($sql);
 
     if(mysqli_num_rows($resultado)<1){
+        $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,email,telefone,senha) VALUES('$nome','$email','$telefone','$senha')");
         header('Location: logint.html');
     }else{
         header('Location: cadastro.html');
     }
 
-
-    $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,email,telefone,senha) VALUES('$nome','$email','$telefone','$senha')");
-    header('Location: logint.html');
 
 ?>
