@@ -2,18 +2,18 @@ let jsiduser = document.querySelector('.jsiduser');
 let btnnao = document.querySelector('.btnnao');
 
 if(jsiduser.value >= 1){
-    let modal = document.querySelector('.modaluser-container');
-       modal.style.display = 'flex';
+    let modaluser = document.querySelector('.modaluser-container');
+       modaluser.style.display = 'flex';
    }
    
-let fechar = document.querySelector('.userbtnfechar');
+let userFechar = document.querySelector('.userbtnfechar');
 
-fechar.addEventListener('click',()=>{
-    let modal = document.querySelector('.modaluser-container');
-    modal.style.display = 'none';
+userFechar.addEventListener('click',()=>{
+    let modaluser = document.querySelector('.modaluser-container');
+    modaluser.style.display = 'none';
 })
 
 btnnao.addEventListener('click',()=>{
-    let modal = document.querySelector('.modaluser-container');
-    modal.style.display = 'none';
+    let modaluser = document.querySelector('.modaluser-container');
+    modaluser.style.display = 'none';
 })
