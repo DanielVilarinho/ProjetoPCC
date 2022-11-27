@@ -54,16 +54,16 @@ if(isset($_POST['confirmar'] ) || isset($_POST['sim'])){
                  $mail->isSMTP();                                            
                  $mail->Host       = 'smtp.gmail.com';                     
                  $mail->SMTPAuth   = true;                                   
-                 $mail->Username   = 'lurdinhacabeleireira1@gmail.com';                     
-                 $mail->Password   = 'wyvmsiobsyfuirng';                               
+                 $mail->Username   = 'danielvilarinho1404@gmail.com';                     
+                 $mail->Password   = 'mpjjtkilybfahvtw';                               
                  $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
                  $mail->Port       = 465;                                   
              
     
-                 $mail->setFrom('lurdinhacabeleireira1@gmail.com', 'Lurdinha Cabeleireira');
-                 $mail->addAddress('lurdinhacabeleireira1@gmail.com', 'Lurdinha'); 
+                 $mail->setFrom('danielvilarinho1404@gmail.com', 'Lurdinha Cabeleireira');
+                 $mail->addAddress('danielvilarinho1404@gmail.com', 'Lurdinha'); 
           
-                 $mail->addReplyTo('lurdinhacabeleireira1@gmail.com', 'Lurdinha');
+                 $mail->addReplyTo('danielvilarinho1404@gmail.com', 'Lurdinha');
     
              
                  //Attachments

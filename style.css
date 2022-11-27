@@ -251,7 +251,7 @@ footer{
 }
 
 #img1{
-  width: 220px;
+  width: 240.65px;
   height: 216px;
   display: inline-block;
 }
@@ -378,7 +378,7 @@ footer{
 }
 
 .valorprod{
-  color: blue;
+  color: rgb(0, 0, 0);
   font-weight: 800;
   text-align: left;
   font-size: 15px;

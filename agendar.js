@@ -32,10 +32,9 @@ window.addEventListener('DOMContentLoaded', function() {
 
     data.setFullYear(data.getFullYear() + 1);
     campo.max = formata(data);
-    console.log(formata(data)); 
+
 
 });
-
 
 
 
