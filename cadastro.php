@@ -16,7 +16,7 @@
         $result = mysqli_query($conexao, "INSERT INTO usuarios(nome,email,telefone,senha) VALUES('$nome','$email','$telefone','$senha')");
         header('Location: logint.html');
     }else{
-        header('Location: cadastrot.php');
+        header('Location: cadastro.html');
     }
 
 

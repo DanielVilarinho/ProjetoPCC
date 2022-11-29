@@ -61,7 +61,7 @@ if(isset($_POST['confirmar'] ) || isset($_POST['sim'])){
              
     
                  $mail->setFrom('danielvilarinho1404@gmail.com', 'Lurdinha Cabeleireira');
-                 $mail->addAddress('danielvilarinho1404@gmail.com', 'Lurdinha'); 
+                 $mail->addAddress($usuario_email); 
           
                  $mail->addReplyTo('danielvilarinho1404@gmail.com', 'Lurdinha');
     

@@ -27,7 +27,7 @@
 <body >
         <header>
             <nav>
-                <a id="linklogo" href="./index.html">
+                <a id="linklogo" href="./index.php">
                 <img id="logo" src="./assets/Lurdinha OG.png" alt="Logo Salão">
                  </a>
                 <div class="navbar">
@@ -37,7 +37,7 @@
                 </div>
                 <ul class="navlist">
                     <li><a href="./produtos.php">Produtos</a></li>
-                    <li><a href="./servicos.html">Serviços</a></li>
+                    <li><a href="./servicos.php">Serviços</a></li>
                     <li class="contscroll">Contato</li>
                     <?php
 
@@ -79,39 +79,39 @@
                     <div class="prodbox">
                         <img id="imgprod" src="https://images.pexels.com/photos/13875783/pexels-photo-13875783.jpeg?cs=srgb&dl=pexels-k%C3%BCbra-arslaner-13875783.jpg&fm=jpg&_gl=1*1s6xl13*_ga*MTI1NDc1NjQ4Ni4xNjY3NTE3MzM3*_ga_8JE65Q40S6*MTY2NzgzMjIxMS4xMC4xLjE2Njc4MzMyNDIuMC4wLjA." alt="">
                         <p class="descprod">Perfumes O Boticário, Natura, só as melhores marcas para você.</p>
-                        <p class="valorprod">Por: <span>R$ 50,00</span></p>
-                        <a href="https://www.youtube.com/"> <button class="prodbtn">Fazer pedido</button> </a>
+                        <p class="valorprod">A partir de: <span>R$ 50,00</span></p>
+                        <a href="https://web.whatsapp.com/send?phone=5561993753229"> <button class="prodbtn">Fazer pedido</button> </a>
                     </div>
                     <div class="prodbox">
                         <img id="imgprod" src="https://images.pexels.com/photos/208052/pexels-photo-208052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
                         <p class="descprod">Maquiagem das melhores marcas e com os melhores preços.</p>
-                        <p class="valorprod">Por: <span>R$ 20,00</span></p>
-                        <a href="https://www.youtube.com/"> <button class="prodbtn">Fazer pedido</button> </a>
+                        <p class="valorprod">A partir de: <span>R$ 20,00</span></p>
+                        <a href="https://web.whatsapp.com/send?phone=5561993753229"> <button class="prodbtn">Fazer pedido</button> </a>
                     </div>
                     <div class="prodbox">
                         <img id="imgprod" src="https://images.pexels.com/photos/3965545/pexels-photo-3965545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
                         <p class="descprod">Últimas tendências em roupas femininas<br><br></p>
-                        <p class="valorprod">Por: <span>R$ 20,00</span></p>
-                        <a href="https://www.youtube.com/"> <button class="prodbtn">Fazer pedido</button> </a>
+                        <p class="valorprod">A partir de: <span>R$ 20,00</span></p>
+                        <a href="https://web.whatsapp.com/send?phone=5561993753229"> <button class="prodbtn">Fazer pedido</button> </a>
                     </div> 
 
                     <div class="prodbox">
                         <img id="imgprod" src="https://images.pexels.com/photos/13875783/pexels-photo-13875783.jpeg?cs=srgb&dl=pexels-k%C3%BCbra-arslaner-13875783.jpg&fm=jpg&_gl=1*1s6xl13*_ga*MTI1NDc1NjQ4Ni4xNjY3NTE3MzM3*_ga_8JE65Q40S6*MTY2NzgzMjIxMS4xMC4xLjE2Njc4MzMyNDIuMC4wLjA." alt="">
                         <p class="descprod">Perfumes O Boticário, Natura, só as melhores marcas para você.</p>
-                        <p class="valorprod">Por: <span>R$ 50,00</span></p>
-                        <a href="https://www.youtube.com/"> <button class="prodbtn">Fazer pedido</button> </a>
+                        <p class="valorprod">A partir de: <span>R$ 50,00</span></p>
+                        <a href="https://web.whatsapp.com/send?phone=5561993753229"> <button class="prodbtn">Fazer pedido</button> </a>
                     </div>
                     <div class="prodbox">
                         <img id="imgprod" src="https://images.pexels.com/photos/208052/pexels-photo-208052.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
                         <p class="descprod">Maquiagem das melhores marcas e com os melhores preços.</p>
-                        <p class="valorprod">Por: <span>R$ 20,00</span></p>
-                        <a href="https://www.youtube.com/"> <button class="prodbtn">Fazer pedido</button> </a>
+                        <p class="valorprod">A partir de: <span>R$ 20,00</span></p>
+                        <a href="https://web.whatsapp.com/send?phone=5561993753229"> <button class="prodbtn">Fazer pedido</button> </a>
                     </div>
                     <div class="prodbox">
                         <img id="imgprod" src="https://images.pexels.com/photos/3965545/pexels-photo-3965545.jpeg?auto=compress&cs=tinysrgb&w=1260&h=750&dpr=1" alt="">
                         <p class="descprod">Últimas tendências em roupas femininas.<br><br></p>
-                        <p class="valorprod">Por: <span>R$ 20,00</span></p>
-                        <a href="https://www.youtube.com/"> <button class="prodbtn">Fazer pedido</button> </a>
+                        <p class="valorprod">A partir de: <span>R$ 20,00</span></p>
+                        <a href="https://web.whatsapp.com/send?phone=5561993753229"> <button class="prodbtn">Fazer pedido</button> </a>
                     </div> 
                 </div>
 
@@ -131,7 +131,7 @@
                     <div class="rodcoluna">
                         <h3>Localização</h3>
                         <ul>
-                            <li>Quadra 20 lote 16</li>
+                            <li>Qd 16 | 11a Parque Estrela Dalva XI</li>
                             <li>Santo Antonio do descoberto - GO</li>
                         </ul>
                     </div>

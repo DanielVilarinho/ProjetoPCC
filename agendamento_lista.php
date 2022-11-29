@@ -56,25 +56,53 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
        
     </head> 
 <body >
-    <header>
-        <nav>
-            <a id="linklogo" href="./index.html">
-            <img id="logo" src="./assets/Lurdinha OG.png" alt="Logo Salão">
-             </a>
-            <div class="navbar">
-                <div class="line1"></div>
-                <div class="line2"></div>
-                <div class="line3"></div>
-            </div>
-            <ul class="navlist">
-                <li><a href="./produtos.php">Produtos</a></li>
-                <li><a href="./servicos.html">Serviços</a></li>
-                <li class="contscroll">Contato</li>
-                <li><a href="./cadastro.html" id="ec">Entrar/Cadastrar</a></li>
+<header>
+            <nav>
+                <a id="linklogo" href="./index.php">
+                <img id="logo" src="./assets/Lurdinha OG.png" alt="Logo Salão">
+                 </a>
+                <div class="navbar">
+                    <div class="line1"></div>
+                    <div class="line2"></div>
+                    <div class="line3"></div>
+                </div>
+                <ul class="navlist">
+                    <li><a href="./produtos.php">Produtos</a></li>
+                    <li><a href="./servicos.php">Serviços</a></li>
+                    <li class="contscroll">Contato</li>
+                    <?php
 
-            </ul>
-        </nav>
-    </header>  
+                    if((isset($_SESSION['email']) == true) and (isset($_SESSION['senha']) == true)){
+                        include_once('conn.php');
+
+                        $query = $conn->prepare("SELECT LEFT(usuarios.nome, POSITION(' ' IN usuarios.nome) - 1) as nome
+                         FROM usuarios 
+                         WHERE usuarios.email=:usuario_email");
+                        $usme = ['usuario_email' => $log];  
+                        $query->execute($usme);
+                        $resultt = $query->fetchAll(PDO::FETCH_ASSOC);
+    
+                        foreach($resultt as $user){
+                        echo "<li class='optlog'><a class='usernome'><figure id='blocoAvatarUsuario' class='sc-eVspGN exeuon'><img src='./assets/Lurdinha-OG.ico' alt='Ninja'></figure>Olá,$user[nome]</a>
+                        <ul class='submenu'>
+    
+                        <li><a class='colorsuba' href='./agendamento_lista.php'>Agendamemtos</a></li>
+                        <li><span>| </span></li>
+                        <li><a class='colorsubb'href='botaosair.php'>Sair</a></li>
+                        </ul>
+                    </li> ";  
+                    }       
+                        
+                    }else{
+                        echo "<li><a href='./logint.html' id='ec'>Entrar/Cadastrar</a></li>";
+                       
+
+                    }
+                    ?>
+
+                </ul>
+            </nav>
+        </header>
     <main>
         <div id="table-container">
             <?php
@@ -190,8 +218,8 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
                 <div class='backdel'>
                     <div class='deletagenda'><form method='POST'><input id='iniduser' type='submit' name='mandariduser' value='$agendas[id_agendamento]'>
                         <a class='btn_delete' onclick='acao()' id='btncancel'>
-                            <svg xmlns='http://www.w3.org/2000/svg' width='23' height='23' fill='white' class='bi bi-trash-fill' viewBox='0 0 16 16'>
-                                <path d='M2.5 1a1 1 0 0 0-1 1v1a1 1 0 0 0 1 1H3v9a2 2 0 0 0 2 2h6a2 2 0 0 0 2-2V4h.5a1 1 0 0 0 1-1V2a1 1 0 0 0-1-1H10a1 1 0 0 0-1-1H7a1 1 0 0 0-1 1H2.5zm3 4a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 .5-.5zM8 5a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-1 0v-7A.5.5 0 0 1 8 5zm3 .5v7a.5.5 0 0 1-1 0v-7a.5.5 0 0 1 1 0z'/>
+                            <svg xmlns='http://www.w3.org/2000/svg' width='27' height='27' fill='white' class='bi bi-trash-fill' viewBox='0 0 16 16'>
+                            <path d='M4.646 4.646a.5.5 0 0 1 .708 0L8 7.293l2.646-2.647a.5.5 0 0 1 .708.708L8.707 8l2.647 2.646a.5.5 0 0 1-.708.708L8 8.707l-2.646 2.647a.5.5 0 0 1-.708-.708L7.293 8 4.646 5.354a.5.5 0 0 1 0-.708z'/> 
                             </svg>
                             </input>
                             </form>
@@ -242,7 +270,7 @@ $result = $query->fetchAll(PDO::FETCH_ASSOC);
                 <div class="rodcoluna">
                     <h3>Localização</h3>
                     <ul>
-                        <li>Quadra 20 lote 16</li>
+                        <li>Qd 16 | 11a Parque Estrela Dalva XI</li>
                         <li>Santo Antonio do descoberto - GO</li>
                     </ul>
                 </div>

@@ -21,6 +21,7 @@ $resultado = mysqli_query($conexao, "INSERT INTO agendamento(id_categoria,id_ser
 
 if (isset($_POST['agendar'])){
     $mail = new PHPMailer(true);
+    $mailuser = new PHPMailer(true);
 
     $querys = $conn->prepare("SELECT nome_servico FROM servicos WHERE id_servico=:id_servico");
     $queryc = $conn->prepare("SELECT nome_categoria FROM categoria_servico WHERE id_categoria=:id_categoria");
@@ -50,53 +51,100 @@ if (isset($_POST['agendar'])){
     try {
 
        // $mail->SMTPDebug = SMTP::DEBUG_SERVER; //                     
-        $mail->isSMTP();                                            
-        $mail->Host       = 'smtp.gmail.com';                     
-        $mail->SMTPAuth   = true;                                   
-        $mail->Username   = 'danielvilarinho1404@gmail.com';                     
-        $mail->Password   = 'mpjjtkilybfahvtw';                               
-        $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
-        $mail->Port       = 465;                                   
+        $mailuser->isSMTP();                                            
+        $mailuser->Host       = 'smtp.gmail.com';                     
+        $mailuser->SMTPAuth   = true;                                   
+        $mailuser->Username   = 'danielvilarinho1404@gmail.com';                     
+        $mailuser->Password   = 'mpjjtkilybfahvtw';                               
+        $mailuser->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
+        $mailuser->Port       = 465;                                   
     
         //Recipients
-        $mail->setFrom('danielvilarinho1404@gmail.com', 'Lurdinha Cabeleireira');
-        $mail->addAddress('danielvilarinho1404@gmail.com', 'Lurdinha'); 
-        //$mail->addAddress($email); //            
-        $mail->addReplyTo('danielvilarinho1404@gmail.com', 'Lurdinha');
-        //$mail->addCC('cc@example.com');//
-        //$mail->addBCC('bcc@example.com');//
+        $mailuser->setFrom('danielvilarinho1404@gmail.com', 'Lurdinha Cabeleireira');
+        $mailuser->addAddress($email, $pegarnome); 
+        //$mailuser->addAddress($email); //            
+        $mailuser->addReplyTo('danielvilarinho1404@gmail.com', 'Lurdinha');
+        //$mailuser->addCC('cc@example.com');//
+        //$mailuser->addBCC('bcc@example.com');//
     
         //Attachments
-       // $mail->addAttachment('/var/tmp/file.tar.gz');   //      //Add attachments
-       // $mail->addAttachment('/tmp/image.jpg', 'new.jpg'); //  //Optional name
+       // $mailuser->addAttachment('/var/tmp/file.tar.gz');   //      //Add attachments
+       // $mailuser->addAttachment('/tmp/image.jpg', 'new.jpg'); //  //Optional name
     
         //Content
-        $mail->isHTML(true);                                  //Set email format to HTML
-        $mail->Subject = 'Novo agendamento';
+        $mailuser->isHTML(true);                                  //Set email format to HTML
+        $mailuser->Subject = 'Novo agendamento';
         
         
         $body = "Novo agendamento realizado:<br><br>
-             <b>Nome do Cliente</b>: $pegarnome<br>
-             <b>Email</b>: $email<br>
-             <b>Telefone</b>: $pegartelefone<br>
              <b>Categoria do Serviço</b>: $pegarcategoria<br>
              <b>Tipo de Serviço</b>: $pegarservico<br>
              <b>Data</b>: $data<br>
              <b>Horario</b>: $horario";
 
-        $mail->Body = $body;
+        $mailuser->Body = $body;
 
 
 
-        //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';//
+        //$mailuser->AltBody = 'This is the body in plain text for non-HTML mail clients';//
     
-        $mail->send();
+        $mailuser->send();
         echo 'Email com Sucesso';
 
         
     } catch (Exception $e) {
-        echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+        echo "Message could not be sent. Mailer Error: {$mailuser->ErrorInfo}";
     }
+    try {
+
+        // $mail->SMTPDebug = SMTP::DEBUG_SERVER; //                     
+         $mail->isSMTP();                                            
+         $mail->Host       = 'smtp.gmail.com';                     
+         $mail->SMTPAuth   = true;                                   
+         $mail->Username   = 'danielvilarinho1404@gmail.com';                     
+         $mail->Password   = 'mpjjtkilybfahvtw';                               
+         $mail->SMTPSecure = PHPMailer::ENCRYPTION_SMTPS;            
+         $mail->Port       = 465;                                   
+     
+         //Recipients
+         $mail->setFrom('danielvilarinho1404@gmail.com', 'Lurdinha Cabeleireira');
+         $mail->addAddress('danielvilarinho1404@gmail.com','Lurdinha'); 
+         //$mail->addAddress($email); //            
+         $mail->addReplyTo('danielvilarinho1404@gmail.com', 'Lurdinha');
+         //$mail->addCC('cc@example.com');//
+         //$mail->addBCC('bcc@example.com');//
+     
+         //Attachments
+        // $mail->addAttachment('/var/tmp/file.tar.gz');   //      //Add attachments
+        // $mail->addAttachment('/tmp/image.jpg', 'new.jpg'); //  //Optional name
+     
+         //Content
+         $mail->isHTML(true);                                  //Set email format to HTML
+         $mail->Subject = 'Novo agendamento';
+         
+         
+         $body = "Novo agendamento realizado:<br><br>
+              <b>Nome do Cliente</b>: $pegarnome<br>
+              <b>Email</b>: $email<br>
+              <b>Telefone</b>: $pegartelefone<br>
+              <b>Categoria do Serviço</b>: $pegarcategoria<br>
+              <b>Tipo de Serviço</b>: $pegarservico<br>
+              <b>Data</b>: $data<br>
+              <b>Horario</b>: $horario";
+ 
+         $mail->Body = $body;
+ 
+ 
+ 
+         //$mail->AltBody = 'This is the body in plain text for non-HTML mail clients';//
+     
+         $mail->send();
+         echo 'Email com Sucesso';
+ 
+         
+     } catch (Exception $e) {
+         echo "Message could not be sent. Mailer Error: {$mail->ErrorInfo}";
+     }
 }else {
         echo "deu merda";
     }

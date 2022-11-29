@@ -18,7 +18,7 @@
         }else{
             $_SESSION['email'] = $email;
             $_SESSION['senha'] = $senha;
-            header('Location: index.html');
+            header('Location: index.php');
         }
 
 

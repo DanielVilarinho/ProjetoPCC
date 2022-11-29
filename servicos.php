@@ -1,3 +1,12 @@
+<?php
+
+    session_start();
+    if((isset($_SESSION['email']) == true) and (isset($_SESSION['senha']) == true)){
+        $log = $_SESSION['email'];
+    }
+    
+?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
     <head>
@@ -15,9 +24,9 @@
     </head> 
 <body >
 
-        <header>
+<header>
             <nav>
-                <a id="linklogo" href="./index.html">
+                <a id="linklogo" href="./index.php">
                 <img id="logo" src="./assets/Lurdinha OG.png" alt="Logo Salão">
                  </a>
                 <div class="navbar">
@@ -27,9 +36,37 @@
                 </div>
                 <ul class="navlist">
                     <li><a href="./produtos.php">Produtos</a></li>
-                    <li><a href="./servicos.html">Serviços</a></li>
+                    <li><a href="./servicos.php">Serviços</a></li>
                     <li class="contscroll">Contato</li>
-                    <li><a href="./cadastro.html" id="ec">Entrar/Cadastrar</a></li>
+                    <?php
+
+                    if((isset($_SESSION['email']) == true) and (isset($_SESSION['senha']) == true)){
+                        include_once('conn.php');
+
+                        $query = $conn->prepare("SELECT LEFT(usuarios.nome, POSITION(' ' IN usuarios.nome) - 1) as nome
+                         FROM usuarios 
+                         WHERE usuarios.email=:usuario_email");
+                        $usme = ['usuario_email' => $log];  
+                        $query->execute($usme);
+                        $result = $query->fetchAll(PDO::FETCH_ASSOC);
+    
+                        foreach($result as $user){
+                        echo "<li class='optlog'><a class='usernome'><figure id='blocoAvatarUsuario' class='sc-eVspGN exeuon'><img src='./assets/Lurdinha-OG.ico' alt='Ninja'></figure>Olá,$user[nome]</a>
+                        <ul class='submenu'>
+    
+                        <li><a class='colorsuba' href='./agendamento_lista.php'>Agendamemtos</a></li>
+                        <li><span>| </span></li>
+                        <li><a class='colorsubb'href='botaosair.php'>Sair</a></li>
+                        </ul>
+                    </li> ";  
+                    }       
+                        
+                    }else{
+                        echo "<li><a href='./logint.html' id='ec'>Entrar/Cadastrar</a></li>";
+                       
+
+                    }
+                    ?>
 
                 </ul>
             </nav>
@@ -85,7 +122,7 @@
                     <div class="rodcoluna">
                         <h3>Localização</h3>
                         <ul>
-                            <li>Quadra 20 lote 16</li>
+                            <li>Qd 16 | 11a Parque Estrela Dalva XI</li>
                             <li>Santo Antonio do descoberto - GO</li>
                         </ul>
                     </div>
