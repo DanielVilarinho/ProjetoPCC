@@ -87,7 +87,7 @@ email.addEventListener('keyup', () => {
 
 telefone.addEventListener('keyup', () => {
   if(telefone.value.length <=10 ){
-    labeltelefone.innerHTML = 'Telefone *Informe um telefone válido'
+    labeltelefone.innerHTML = 'Telefone *Informe os 11 digitos do seu telefone'
     labeltelefone.setAttribute('style', 'color: red')
     telefone.setAttribute('style', 'border-color: red')
     validartelefone = false
